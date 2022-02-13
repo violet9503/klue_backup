@@ -1,0 +1,16 @@
+<div class="index-menubar-onsearch">
+    <div class="index-menubar-onsearch-category">
+        <select #select>
+            <option value="">카테고리</option>
+            <option value="lecture">강의평가</option>
+            <option value="note">공부노트</option>
+        </select>
+    </div>
+    <div class="index-menubar-onsearch-context">
+        <img src="/assets/img/Search_black.png" class="index-menubar-onsearch-submit" />
+        <input class="index-menubar-onsearch-input" type="text" placeholder="강의명, 교수명, 과목코드, 키워드로 검색" #keyword (keyup.enter)="onSearch(keyword.value, select.value)" autofocus/>
+        <div class="index-menubar-onsearch-close" (click)="closeSearch()">
+          <img src="/assets/img/Search_Close.png"/>
+        </div>
+    </div>
+</div>

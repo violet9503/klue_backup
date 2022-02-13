@@ -1,0 +1,86 @@
+<div class="lecture-search-result-container" *ngIf="result">
+  <div class="lecture-index-title"><img src="/assets/img/Bookmark.png" align="center">작성한 강의평가(<span>{{result.total_count}}</span>)</div>
+  <div class="lecture-detail-content" *ngFor="let evaluation of evaluations">
+    <div class="lecture-eval-content">
+      <div class="lecture-eval-title">
+        <span>{{evaluation.name | lectureSlice: 25}}</span><span>{{evaluation.prof | lectureSlice: 15}}</span><span>{{evaluation.year}}년 {{evaluation.term}}</span>
+      </div>
+      <hr>
+      <div class="lecture-eval-point">
+
+        <div class="lecture-eval-category-container">
+          <div class="lecture-eval-point-item">총평</div>
+          <div class="lecture-main-rate-star" id="total_eval_{{evaluation.id}}">
+            <span class="lecture-eval-rate-star-img"></span>
+            <span class="lecture-eval-rate-star-img"></span>
+            <span class="lecture-eval-rate-star-img"></span>
+            <span class="lecture-eval-rate-star-img"></span>
+            <span class="lecture-eval-rate-star-img"></span>
+          </div>
+        </div>
+
+        <div class="lecture-eval-category-container">
+          <div class="lecture-eval-point-item">출석체크</div>
+          <span class="lecture-eval-point-slider" id="slider_{{evaluation.id}}_1">
+            <button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button>
+          </span>
+        </div>
+
+        <div class="lecture-eval-category-container">
+          <div class="lecture-eval-point-item">난이도</div>
+          <span class="lecture-eval-point-slider" id="slider_{{evaluation.id}}_2">
+            <button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button>
+          </span>
+        </div>
+
+        <div class="lecture-eval-category-container">
+          <div class="lecture-eval-point-item">학습량</div>
+          <span class="lecture-eval-point-slider" id="slider_{{evaluation.id}}_3">
+            <button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button>
+          </span>
+        </div>
+
+        <div class="lecture-eval-category-container">
+          <div class="lecture-eval-point-item">학점</div>
+          <span class="lecture-eval-point-slider" id="slider_{{evaluation.id}}_4">
+            <button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button>
+          </span>
+        </div>
+
+        <div class="lecture-eval-category-container">
+          <div class="lecture-eval-point-item">성취감</div>
+          <span class="lecture-eval-point-slider" id="slider_{{evaluation.id}}_5">
+            <button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button>
+          </span>
+        </div>
+      </div>
+      <span class="lecture-eval-content-user">
+        <img class="lecture-eval-content-user-img" [src]="evaluation.profile"/>{{evaluation.user_name}}
+        <span class="lecture-eval-content-subfix">님의 의견</span>
+      </span>
+      <span class="lecutre-eval-content-modtime">작성일 {{evaluation.updated_at}}</span>
+      <div class="lecture-eval-content-context" [innerHTML]="evaluation.content | lectureBr"></div>
+    </div>
+    <div class="lecture-eval-reaction">
+      <div class="lecture-eval-reaction-left">
+        <div (click)="clickLike(evaluation)"><img src="/assets/img/Likes_empty_color.png" *ngIf="!evaluation.like_status" align="center"/><img src="/assets/img/Likes_fill_color.png" *ngIf="evaluation.like_status" align="center"/> {{evaluation.like_count}}</div>
+        <div (click)="clickReview(evaluation)"><img src="/assets/img/Comment_grey.png" align="center" style="margin-left:20px;"/> {{evaluation.comments_count}}</div>
+      </div>
+
+      <div class="lecture-eval-reaction-right">
+        <img src="/assets/img/Modify_color.png" align="center" (click)="clickRewrite(evaluation)"/>
+        <span (click)="clickRewrite(evaluation)">수정</span>
+        <img src="/assets/img/Delete_color.png" align="center" (click)="clickDelete(evaluation.lec_id)"/>
+        <span (click)="clickDelete(evaluation.lec_id)">삭제</span>
+      </div>
+    </div>
+    <lecture-review *ngIf="evaluation.comments_status" (close)="closeReview(evaluation)" (changeComments)="changeComments(evaluation, $event)" [evaluation]="evaluation"></lecture-review>
+
+  </div>
+</div>
+<div class="lecture-search-result-container" *ngIf="!result">
+  <div class="lecture-index-title"><img src="/assets/img/Bookmark.png" align="center">작성한 강의평가</div>
+  <div class="lecture-detail-no-content">
+    작성한 강의평가가 없습니다.
+  </div>
+</div>

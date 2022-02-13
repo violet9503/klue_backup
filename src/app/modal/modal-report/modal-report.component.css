@@ -1,0 +1,53 @@
+.modal-content-title{
+  height: 22px;
+  font-size: 20px;
+  text-align: center;
+  color: #4a4a4a;
+  margin-top:20px;
+  cursor: default;
+}
+.modal-report-description {
+  height: 18px;
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+  color: #9b9b9b;
+  font-weight: 400;
+}
+
+.modal-report-container{
+  text-align: center;
+}
+
+.modal-report-input{
+  width: 500px;
+  height: 173px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  margin:15px auto 0;
+  padding:12px 0 0 18px;
+  border:0;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.modal-report-input::placeholder{
+  color: #bbbbbb;
+}
+
+.modal-report-btn{
+  width: 265px;
+  height: 45px;
+  border-radius: 25px;
+  text-align: center;
+  background-color: #fafafa;
+  border: solid 1px #fd884d;
+  color:#fd884d;
+  font-size: 14px;
+  cursor:pointer;
+  margin-top: 20px;
+}
+
+.complete{
+  height: 30px;
+}

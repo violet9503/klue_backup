@@ -1,0 +1,61 @@
+.modal-content-title{
+    height: 22px;
+    font-size: 20px;
+    text-align: center;
+    color: #4a4a4a;
+    margin-top:20px;
+    cursor: default;
+    font-weight: 900px;
+}
+
+.modal-login-input{
+    width: 265px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+    display:block;
+    margin:0 auto;
+    margin-top:10px;
+    padding:0;
+    padding-left:18px;
+    border:0;
+}
+.modal-login-input:nth-of-type(1){
+    margin-top: 20px;
+}
+.modal-login-input-checker{
+    width: 265px;
+    height: 13px;
+    margin: 0 auto;
+    margin-top:5px;
+    font-size: 12px;
+    text-align: center;
+    color: #fd884d;
+}
+.modal-login-submit{
+    width: 285px;
+    height: 40px;
+    border-radius: 25px;
+    border: 1px solid #ff884d;
+    display:block;
+    margin:0 auto;
+    margin-top:10px;
+    padding:0;
+    text-align:center;
+    background-color: #f9f9f9;
+    color:#ff994d;
+    cursor: pointer;
+}
+.modal-login-help{
+    display: block;
+    margin: 0 auto;
+    margin-top:17px;
+    height: 13px;
+    font-size: 12px;
+    text-align: center;
+    color: #bbbbbb;
+    cursor: pointer;
+}
+.modal-login-help:hover{
+    text-decoration: underline;
+}

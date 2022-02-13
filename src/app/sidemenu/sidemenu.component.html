@@ -1,0 +1,28 @@
+<div class="lecture-point" *ngIf="userService.userInfo">
+  <div class="lecture-point-image">
+    <img [src]="userService.userInfo.profile">
+  </div>
+  <div class="lecture-point-info">
+    <span>{{userService.userInfo.name}}</span>
+    <div class="lecture-point-info-content">
+      <span>포인트</span>
+      <span>{{userService.userInfo.points}}<span>P</span></span>
+    </div>
+    <div class="lecture-point-info-content">
+      <span>커피콩</span>
+      <span>{{userService.userInfo.coffee_bean}}<img src="/assets/img/Coffeebean_color.png" align="center"></span>
+    </div>
+  </div>
+  <button class="lecture-point-btn" (click)="clickGetEval()" *ngIf="!userService.userInfo.read_lec_eval_authority" klueBtn>열람 권한 얻기 (100 P)</button>
+  <button class="lecture-point-btn" disabled *ngIf="userService.userInfo.read_lec_eval_authority">열람 권한 있음</button>
+</div>
+
+<div class="lecture-point" *ngIf="!userService.userInfo">
+  <img src="/assets/img/KLUE_Logo_color.png" class="lecture-point-logo">
+  <div class="lecture-point-notlogin-description">
+    로그인하셔야<br>서비스를 정상적으로<br>이용하실 수 있습니다.<br>
+  </div>
+  <div class="lecture-point-notlogin-link"><span (click)="sharedService.stateChange('login')">로그인</span><span (click)="sharedService.stateChange('signup')">회원가입</span></div>
+  <button class="lecture-point-btn notlogin" disabled>열람 권한 없음</button>
+</div>
+

@@ -1,0 +1,149 @@
+.modal-content-title {
+  height: 22px;
+  font-size: 20px;
+  text-align: center;
+  color: #4a4a4a;
+  margin-top: 20px;
+}
+
+.modal-find-help {
+  font-size: 14px;
+  text-align: center;
+  color: #9b9b9b;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.modal-find-input.select{
+  padding: 0 10px;
+  width: 245px;
+}
+
+.modal-find-select{
+  width:inherit;
+  height:inherit;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+}
+
+.modal-find-input {
+  width: 245px;
+  height: 40px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  padding-left: 20px;
+  border: 0;
+  font-weight: 500;
+}
+
+.modal-find-input.email{
+  width: 135px;
+  display: inline-block;
+}
+
+.modal-find-row {
+  width: 265px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.modal-find-btn {
+  width: 265px;
+  height: 45px;
+  border-radius: 25px;
+  background-color: #ffffff;
+  border: solid 1px #fd884d;
+  text-align: center;
+  color: #fd884d;
+  font-size: 14px;
+}
+
+.modal-find-link {
+  display: block;
+  height: 16px;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  color: #fd884d;
+  cursor: pointer;
+}
+
+.modal-find-link:hover {
+  text-decoration: underline;
+}
+
+.modal-find-check-tap {
+  width: 305px;
+  margin: 25px auto 0;
+  list-style: none;
+  display: table;
+  padding:0;
+}
+
+.modal-find-check-tap > li {
+  float: left;
+  width: 150px;
+  height: 50px;
+  background-color: #f1f1f1;
+  margin-right: 5px;
+  text-align: center;
+  line-height: 50px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 14px;
+  color: #bbbbbb;
+  font-weight: 400;
+}
+
+.modal-find-check-tap > li:last-child {
+  margin-right: 0;
+}
+
+.modal-find-check-tap > li.active {
+  background-color: #ffffff;
+  border-top: 5px solid #fd884d;
+  height: 45px;
+  color: #fd884d;
+  position: relative;
+}
+
+.modal-find-content-container {
+  background-color: #ffffff;
+  display: table;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.modal-find-content-container >span{
+  margin-left: 10px;
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+.modal-find-complete{
+  font-size: 14px;
+  line-height: 1.29;
+  text-align: center;
+  color: #9b9b9b;
+  font-weight:400;
+  margin:20px auto 25px;
+}
+
+.modal-find-complete > span{
+  color: #fd884d;
+}
+
+.modal-find-wrong{
+  font-size: 12px;
+  text-align: left;
+  color: #fd884d;
+  height:13px;
+  margin-top:5px;
+  font-weight:400;
+  margin-left: 10px;
+}

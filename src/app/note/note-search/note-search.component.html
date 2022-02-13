@@ -1,0 +1,25 @@
+<div class="lecture-index-search">
+  <div class="lecture-search-content">
+    <span class="lecture-search-content-title">공부노트 검색</span>
+    <div class="lecture-search-content-context">
+      <input class="lecture-search-content-context-text" type="text" [value]="searchValue" placeholder="강의명, 교수명, 과목코드로 검색" #keyword (keyup.enter)="onSearch(keyword.value)"/>
+      <img class="lecture-search-content-context-btn" src="/assets/img/Button_SearchBox.png" (click)="onSearch(keyword.value)"/>
+    </div>
+    <button class="lecture-search-content-toggle" *ngIf="isOpen" (click)="isClick()">∧<!--ㄷ한자 --></button>
+    <button class="lecture-search-content-toggle" *ngIf="!isOpen" (click)="isClick()">∨<!--ㄷ한자 --></button>
+  </div>
+
+  <div class="note-search-category" [style.display]="isOpen ? 'block' : 'none'">
+    <div class="note-search-category-aligner">
+      <select class="note-search-category-school">
+        <option>고려대학교</option>
+        <option>막걸리대학교</option>
+      </select>
+      <select class="note-search-category-type">
+        <option>카테고리</option>
+        <option>강의필기</option>
+        <option>개념정리</option>
+      </select>
+    </div>
+  </div>
+</div>

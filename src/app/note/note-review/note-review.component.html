@@ -1,0 +1,15 @@
+<div class="note-review-container">
+  <div class="note-review-count">댓글 <span>{{comments.length}}</span> </div>
+  <div class="note-review-each-container" *ngFor="let comment of comments">
+    <img [src]="comment.profile">
+    <div class="note-review-content">
+      <div class="note-review-info"> {{comment.name}} <span>{{comment.created_at}}</span> <span style="float:right;cursor: pointer;" *ngIf="(comment.write_status==1)" (click)="deleteReview(comment.id)">X</span></div>
+      <div class="note-review-comment">{{comment.content}}</div>
+    </div>
+  </div>
+
+  <input class="note-review-comment-input" type="text" placeholder="댓글을 입력하세요" #input/>
+  <button class="note-review-comment-btn" (click)="registerReview(input)" klueBtn>등록</button>
+
+  <div class="note-review-close" (click)="closeReview()">∧ 접기</div>
+</div>

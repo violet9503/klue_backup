@@ -1,0 +1,8 @@
+<div class="modal-wrap" (click)="modalOut()">
+  <div class="modal-row">
+    <div class="modal-content" (mouseleave)="isOut=true" (mouseenter)="isOut=false" [style.width]="widthExpand ? '640px' : '400px'">
+      <modal-header></modal-header>
+      <modal-contents [state]="state"></modal-contents>
+    </div>
+  </div>
+</div>

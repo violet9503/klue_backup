@@ -1,0 +1,24 @@
+<div class="mypage-header">
+  <ul>
+    <li [ngClass]="{'mypage-current-page': isMain}" (click)="routingService.routing('mypage')">
+      <img src="/assets/img/Mypage_grey.png" *ngIf="!isMain">
+      <img src="/assets/img/Mypage_color.png" *ngIf="isMain">
+      <span>마이페이지</span>
+    </li>
+    <li [ngClass]="{'mypage-current-page': isTable}" (click)="gotoTimetable()">
+      <img src="/assets/img/Timetable_grey.png" *ngIf="!isTable">
+      <img src="/assets/img/Timetable_color.png" *ngIf="isTable">
+      <span>시간표</span>
+    </li>
+    <li [ngClass]="{'mypage-current-page': isCoffee}" (click)="routingService.routing('mypage', 'coffeebean')">
+      <img src="/assets/img/Coffeebean_grey.png" *ngIf="!isCoffee">
+      <img src="/assets/img/Coffeebean_color.png" *ngIf="isCoffee">
+      <span>커피콩</span>
+    </li>
+    <li [ngClass]="{'mypage-current-page': isHistory}" (click)="routingService.routing('mypage/history', 'eval')">
+      <img src="/assets/img/History_grey.png" *ngIf="!isHistory">
+      <img src="/assets/img/History_color.png" *ngIf="isHistory">
+      <span>활동내역</span>
+    </li>
+  </ul>
+</div>

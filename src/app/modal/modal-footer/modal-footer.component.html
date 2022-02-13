@@ -1,0 +1,14 @@
+<div class="modal-footer-top">
+  <div class="modal-footer-line">
+    <hr>
+    <span>or</span>
+    <hr>
+  </div>
+</div>
+
+<div class="modal-footer-snslogin"><img src="/assets/img/SocialLogin_Google.png" (click)="goGoogle()"><img src="/assets/img/SocialLogin_Facebook.png" (click)="goFacebook()"></div>
+
+<div class="modal-footer-login">
+  <div *ngIf="!isShow"><span>아직 회원이 아니신가요? </span><span class="modal-footer-login-link" (click)="sharedService.stateChange('signup')">회원가입</span></div>
+  <div *ngIf="isShow"><span>이미 회원이신가요? </span><span class="modal-footer-login-link" (click)="sharedService.stateChange('login')">로그인</span></div>
+</div>

@@ -1,0 +1,52 @@
+<div class="mypage-note-wrap">
+  <div class="mypage-note-title"><img src="/assets/img/Bookmark.png" align="center">구매한 노트(<span>0</span>)</div>
+  <div class="mypage-note-container">
+    <table>
+      <tr>
+        <th width="130px">구매 일자</th>
+        <th width="280px">노트 제목</th>
+        <th width="170px">노트 업로더</th>
+        <th width="80px">노트 상세</th>
+        <th width="80px">다운로드</th>
+      </tr>
+      <tr *ngFor="let item of uploadNote">
+        <td>{{item.created_at}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.content}}</td>
+        <td><img src="/assets/img/View_color.png"></td>
+        <td><img src="/assets/img/Download_color.png"></td>
+      </tr>
+    </table>
+    <div class="mypage-note-btn-container">
+      <button class="mypage-note-page-move-btn" *ngIf="currentPage[0] > 5" (click)="setPageList(false)"><</button>
+      <button class="mypage-note-page-btn" *ngFor="let num of pageList[0]; let i=index" [class.selected]="currentPage[0] == num" (click)="clickPage(num)" klueBtn>{{num}}</button>
+      <button class="mypage-note-page-move-btn" *ngIf="existNext[0]" (click)="setPageList(true)">></button>
+    </div>
+  </div>
+
+
+  <div class="mypage-note-title"><img src="/assets/img/Bookmark.png" align="center">업로드한 노트(<span></span>)</div>
+  <div class="mypage-note-container">
+    <table>
+      <tr>
+        <th width="130px">업로드 일자</th>
+        <th width="330px">노트 제목</th>
+        <th width="120px">구매자 수</th>
+        <th width="80px">노트 상세</th>
+        <th width="80px">노트 삭제</th>
+      </tr>
+      <tr *ngFor="let item of downNote">
+        <td>{{item.created_at}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.points}}</td>
+        <td><img src="/assets/img/View_color.png"></td>
+        <td><img src="/assets/img/Delete_color.png"></td>
+      </tr>
+    </table>
+    <div class="mypage-note-btn-container">
+      <button class="mypage-note-page-move-btn" *ngIf="currentPage[1] > 5" (click)="setPageList(false)"><</button>
+      <button class="mypage-note-page-btn" *ngFor="let num of pageList[1]; let i=index" [class.selected]="currentPage[1] == num" (click)="clickPage(num)" klueBtn>{{num}}</button>
+      <button class="mypage-note-page-move-btn" *ngIf="existNext[1]" (click)="setPageList(true)">></button>
+    </div>
+  </div>
+</div>

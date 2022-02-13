@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+@import  "/assets/css/nouislider.min.css";
+@import "~nouislider/distribute/nouislider.min.css";
+@media (max-width:1024px){
+  body{
+    width:1024px;
+  }
+  .index-menubar {
+    width: 1024px;
+  }
+}
+
+@media (max-width:1279px){
+  html{font-size:12px;}
+}
+@media (min-width:1280px) and (max-width:1439px){
+  html{font-size:14px;}
+}
+@media (min-width:1440px){
+  html{font-size:16px;}
+}
+
+body{
+  margin:0;
+  padding:0;
+  font-family: "Nanum Square";
+  font-weight:600;
+  cursor: default;
+  background-color: #f1f1f1;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  min-width:1024px;
+}
+button{
+  font-family: "Nanum Square";
+  font-weight:500;
+}
+.modal-open {
+  overflow: hidden;
+}
+
+.klue-logo {
+  width: 120px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.klue-logo > img{
+  width: 120px;
+  height: 40px;
+}
+
+.klue-logo > .loading{
+  width: 40px;
+  height: 40px;
+}

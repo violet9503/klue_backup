@@ -1,0 +1,12 @@
+<div class="modal-content-title">
+  <span>비밀번호 확인</span>
+</div>
+
+<p class="modal-check-notice">개인정보 보호를 위해 본인확인을 진행합니다.</p>
+
+<input type='password' class="modal-check-input" placeholder="비밀번호" #input (keyup.enter)="clickSubmit(input.value)" autofocus>
+<div class="modal-check-input-checker checker-wrong" *ngIf="isWrong_pw">
+  <span>{{pwConditionWrong}}</span>
+</div>
+
+<button class="modal-check-submit" (click)="clickSubmit(input.value)" klueBtn>본인확인</button>

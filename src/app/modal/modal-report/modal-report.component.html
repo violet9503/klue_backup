@@ -1,0 +1,18 @@
+<div class="modal-content-title">
+  <span>게시물 신고</span>
+</div>
+
+<div *ngIf="!isNext">
+  <div class="modal-report-description">해당 게시물을 신고합니다. 신고 사유를 적어주세요.</div>
+  <div class="modal-report-container">
+    <textarea class="modal-report-input" placeholder="신고 사유를 입력하세요." #input></textarea>
+    <button class="modal-report-btn" (click)="report(input)" klueBtn>신고하기</button>
+  </div>
+</div>
+
+<div *ngIf="isNext">
+  <div class="modal-report-container">
+    <div class="modal-report-description complete">해당 게시물 신고가 완료되었습니다.<br/>관리자가 직접 게시물 확인 후 조치할 예정입니다.</div>
+    <button class="modal-report-btn" (click)="close()" klueBtn>원래 화면으로 돌아가기</button>
+  </div>
+</div>

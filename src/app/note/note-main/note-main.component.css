@@ -1,0 +1,80 @@
+.note-search-more{
+  font-size: 20px;
+  float: right;
+  color: #fd884d;
+  cursor: pointer;
+}
+
+.note-lecture-search{
+  width:100%;
+  height:60px;
+  padding:0 30px;
+  font-size:14px;
+  text-align: center;
+  display: table;
+  box-sizing: border-box;
+}
+
+.note-lecture-search > div{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.note-lecture-search>div:nth-child(1){
+  width:80px;
+}
+.note-lecture-search>div:nth-child(2){
+  width:180px;
+}
+.note-lecture-search.result>div:nth-child(2){
+  text-align: left;
+  padding-left: 20px;
+}
+.note-lecture-search>div:nth-child(3){
+  width:120px;
+}
+.note-lecture-search.result>div:nth-child(1), .note-lecture-search.result>div:nth-child(3){
+  color: #9b9b9b;
+}
+.note-lecture-search>div:nth-child(4){
+  width:120px;
+}
+.note-lecture-search>div:nth-child(5){
+  width:240px;
+}
+
+.note-lecture-search.header{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #fafafa;
+  margin:25px 0 20px;
+  color: #bbbbbb;
+
+}
+
+.note-lecture-search.result{
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin-bottom:10px;
+  color: #4a4a4a;
+}
+
+.note-search-btn {
+  width: 100px;
+  height: 30px;
+  border-radius: 25px;
+  border: solid 1px #fd884d;
+  color: #fd884d;
+  font-size: 9px;
+  background-color: #ffffff;
+}
+
+.note-search-btn:nth-child(2n+1){
+  margin-right:15px;
+}
+
+.note-search-btn > img{
+  width: 10px;
+  height: 10px;
+  margin-right:7px;
+}

@@ -1,0 +1,264 @@
+@media all and (max-width: 1279px) {
+  .mypage-coffeecup-wrap {
+    position: relative;
+    left: 100px;
+  }
+}
+
+.mypage-coffeecup-wrap {
+  width: 800px;
+  margin: 50px auto;
+}
+
+.mypage-coffeecup-title {
+  font-size: 24px;
+  color: #4a4a4a;
+  margin: 50px 0 24px 5px;
+}
+
+.mypage-coffeecup-title > img {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.mypage-coffeecup-container {
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.mypage-coffeecup-bank-container {
+  padding: 30px 50px;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.mypage-coffeecup-info {
+  display: table;
+  margin: 0 auto;
+  padding: 30px 50px;
+}
+
+.mypage-coffeecup-img {
+  width: 50px;
+  height: 50px;
+}
+
+.mypage-coffeecup-name {
+  display: inline-block;
+  font-size: 14px;
+  text-align: left;
+  color: #9b9b9b;
+  margin-right: 35px;
+  width: 55px;
+}
+
+.mypage-coffeecup-description {
+  font-size: 20px;
+  color: #bbbbbb;
+  margin: 0 30px;
+  vertical-align: middle;
+}
+
+.mypage-coffeecup-quantity {
+  font-size: 24px;
+  text-align: center;
+  color: #4a4a4a;
+  vertical-align: middle;
+}
+
+.mypage-coffeecup-calc-day {
+  margin-left: 50px;
+  font-size: 14px;
+  color: #9b9b9b;
+}
+
+.mypage-coffeecup-calc-day > span {
+  color: #fd884d;
+}
+
+.mypage-coffeecup-input {
+  width: 120px;
+  height: 30px;
+  border-radius: 25px;
+  background-color: #f0f0f0;
+  margin: 0 30px;
+  border: 0;
+  padding: 0 15px;
+}
+
+.mypage-coffeecup-charge-btn {
+  width: 140px;
+  height: 40px;
+  border-radius: 20px;
+  border: solid 1px #fd884d;
+  background-color: #ffffff;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #fd884d;
+  margin-left: 50px;
+}
+
+.mypage-coffeecup-term-btn {
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  border: solid 1px #fd884d;
+  padding: 8px 0;
+  text-align: center;
+  font-size: 12px;
+  color: #fd884d;
+  margin-right: 15px;
+}
+
+.mypage-coffeecup-check-btn {
+  width: 150px;
+  height: 30px;
+  border-radius: 25px;
+  border: solid 1px #fd884d;
+  background-color: #ffffff;
+  padding: 7px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #fd884d;
+}
+
+.selected {
+  background-color: #fd884d;
+  color: #ffffff;
+}
+
+.mypage-coffeecup-check-container {
+  padding: 25px 0 20px 50px;
+}
+
+.mypage-coffeecup-check-container > div:nth-child(odd) {
+  padding-left: 120px;
+}
+
+.mypage-coffeecup-check-container > div:last-child {
+  font-size: 13px;
+  color: #9b9b9b;
+}
+
+.mypage-coffeecup-check-btn-container {
+  text-align: center;
+  padding: 25px;
+}
+
+hr {
+  width: 95%;
+  border: solid 1px #e5e5e5;
+  margin: 0 auto;
+}
+
+table {
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+th {
+  font-size: 14px;
+  color: #bbbbbb;
+  border-bottom: solid 1px #e5e5e5;
+  height: 80px;
+}
+
+tr {
+  height: 60px;
+}
+
+td {
+  color: #4a4a4a;
+  text-align: center;
+}
+
+tr > td:nth-child(1) {
+  color: #9b9b9b;
+}
+
+tr > td:nth-child(3) {
+  color: #fd884d;
+}
+
+tr:nth-last-child(2) > td {
+  border-bottom: solid 1px #e5e5e5;
+}
+
+.mypage-coffeecup-plus {
+  color: #ffbd85 !important;
+}
+
+.mypage-coffeecup-page-btn {
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  border: solid 1px #fd884d;
+  background-color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  color: #fd884d;
+}
+
+.mypage-coffeecup-page-btn.selected {
+  width: 30px;
+  height: 30px;
+  background-color: #fd884d;
+  color: #ffffff;
+}
+
+.mypage-coffeecup-contents-line {
+  vertical-align: middle;
+  line-height: 30px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.mypage-coffeecup-contents-line:last-child {
+  margin-bottom: 0;
+}
+
+.mypage-coffeecup-bank {
+  width: 250px;
+  height: 30px;
+  border-radius: 25px;
+  background-color: #f0f0f0;
+  display: inline-block;
+  border: 0;
+  padding: 0 15px;
+  margin-left: 30px;
+}
+
+.mypage-coffeecup-bank-select {
+  width: inherit;
+  height: inherit;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+}
+
+.mypage-coffeecup-input {
+  width: 250px;
+  height: 30px;
+  border-radius: 25px;
+  background-color: #f0f0f0;
+  margin-right: 30px;
+  border: 0;
+  padding: 0 15px;
+}
+
+.mypage-coffeecup-bank-changebtn {
+  width: 150px;
+  height: 30px;
+  border-radius: 20px;
+  border: solid 1px #fd884d;
+  float: right;
+  background-color: #ffffff;
+  padding: 8px 0;
+  text-align: center;
+  font-size: 12px;
+  color: #fd884d;
+}
+

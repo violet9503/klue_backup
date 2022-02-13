@@ -1,0 +1,72 @@
+<div class="index-area">
+  <div id="index-carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#index-carousel" *ngFor="let item of carouselImg; let i = index;" [attr.data-slide-to]="i" [class.active]="i == 0"></li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox" #carouselList>
+      <div class="item" *ngFor="let item of carouselImg; let i = index;" [class.active]="i == 0">
+        <img [src]="item.s3_url" (click)="clickCarousel(item.click_url)" [style.cursor]="item.click_url ? 'pointer' : 'default'">
+      </div>
+    </div>
+
+    <a class="left carousel-control" href="#index-carousel" role="button" data-slide="prev">
+      <img src="/assets/img/Arrow_left.png">
+    </a>
+    <a class="right carousel-control" href="#index-carousel" role="button" data-slide="next">
+      <img src="/assets/img/Arrow_right.png">
+    </a>
+  </div>
+
+  <div class="index-context">
+    <div class="index-context-detail" (click)="changeFocus('eval')" style="cursor:pointer;">
+      <div class="index-context-title" [class.txOrg]="isEval">
+        <img class="index-context-logo" src="/assets/img/Evaluation_white.png" *ngIf="!isEval"
+             align="center"/>
+        <img class="index-context-logo" src="/assets/img/Evaluation_color.png" *ngIf="isEval"
+             align="center"/>
+        강의평가
+      </div>
+      <img class="index-context-triangle" [style.display]="isEval ? 'inline' : 'none'"/>
+    </div>
+    <div class="index-context-detail" (click)="changeFocus('note')" style="cursor:pointer;">
+      <div class="index-context-title" [class.txOrg]="isNote">
+        <img class="index-context-logo" src="/assets/img/StudyNote_white.png" *ngIf="!isNote"
+             align="center"/>
+        <img class="index-context-logo" src="/assets/img/StudyNote_color.png" *ngIf="isNote"
+             align="center"/>
+        공부노트
+      </div>
+      <img class="index-context-triangle" [style.display]="isNote ? 'inline' : 'none'"/>
+    </div>
+    <div class="index-context-search">
+      <input class="index-context-input" type="text" placeholder="강의명, 교수명, 과목코드로 검색" #keyword
+             (keyup.enter)="onSearch(keyword.value)"/>
+      <img class="index-context-input-btn" src="/assets/img/Button_SearchBox.png"
+           (click)="onSearch(keyword.value)"/>
+    </div>
+  </div>
+  <div class="index-function-link">
+    <div class="index-link-rectangle">
+      <div>
+        <img class="index-link-logo" src="/assets/img/Evaluation_white.png"/>
+        <p>강의평가</p>
+        <span>42,220 명의 학우가 공유한<br>426,280 개의 강의평가 보러가기</span>
+      </div>
+    </div>
+    <div class="index-link-rectangle">
+      <div>
+        <img class="index-link-logo" src="/assets/img/StudyNote_white.png"/>
+        <p>공부노트</p>
+        <span>곧 업데이트 <br>될 기능입니다.</span>
+      </div>
+    </div>
+    <div class="index-link-rectangle">
+      <div>
+        <img class="index-link-logo" src="/assets/img/Timetable_white.png"/>
+        <p>시간표</p>
+        <span>시간표 설명<br>두 줄</span>
+      </div>
+    </div>
+  </div>
+</div>

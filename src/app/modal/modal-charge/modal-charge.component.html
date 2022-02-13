@@ -1,0 +1,33 @@
+<div class="modal-content-title">
+  <span>커피콩 충전</span>
+</div>
+
+<div class="modal-charge-container">
+  <span class="modal-charge-name">충전할 커피콩 개수</span>
+  <div class="modal-charge-select-container">
+    <select class="modal-charge-select" (change)="selectChange(select.value)" #select>
+      <option value="0" selected>커피콩 개수 선택</option>
+      <option value="10">10개 - 1000원</option>
+      <option value="50">50개 - 5000원</option>
+      <option value="100">100개 - 10000원</option>
+      <option value="300">300개 - 30000원</option>
+      <option value="500">500개 - 50000원</option>
+    </select>
+  </div>
+  <span class="modal-charge-money-description">결제금액 : {{chargeMoney}}원 (부가세 10% 포함)</span>
+</div>
+
+<div class="modal-charge-container">
+  <span class="modal-charge-name">결제 수단 선택</span>
+  <table>
+    <tr>
+      <td><input type="radio" name="type" value="card"> 신용카드</td>
+      <td><input type="radio" name="type" value="phone"> 휴대폰소액결제</td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+
+<div class="modal-charge-btn-container">
+  <button class="modal-charge-btn" klueBtn>결제하기</button>
+</div>

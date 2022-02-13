@@ -1,0 +1,32 @@
+.modal-content-title{
+    height: 22px;
+    font-size: 20px;
+    text-align: center;
+    color: #4a4a4a;
+    margin-top:20px;
+    cursor: default;
+}
+.modal-signup-input-checker{
+    width: 265px;
+    height: 13px;
+    margin: 0 auto;
+    margin-top:5px;
+    font-size: 12px;
+    text-align: left;
+    color: #bbbbbb;
+    font-weight: 300;
+}
+.modal-signup-submit{
+    width: 285px;
+    height: 40px;
+    border-radius: 25px;
+    border: 1px solid #ff884d;
+    display:block;
+    margin:0 auto;
+    margin-top:10px;
+    padding:0;
+    text-align:center;
+    background-color: #f9f9f9;
+    color:#ff994d;
+    cursor: pointer;
+}

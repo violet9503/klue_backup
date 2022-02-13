@@ -1,0 +1,106 @@
+.modal-content-title {
+  height: 22px;
+  font-size: 20px;
+  text-align: center;
+  color: #4a4a4a;
+  margin-top: 20px;
+  cursor: default;
+}
+
+.modal-signup-input {
+  width: 265px;
+  height: 40px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  border: 0;
+  font-weight: 500;
+  padding: 0 18px;
+}
+
+.modal-signup-input.email{
+  width: 140px;
+  display: inline-block;
+}
+
+.modal-signup-email{
+  width: 300px;
+  margin: 0 auto;
+}
+
+.modal-signup-email>span{
+  margin-left: 10px;
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+.modal-signup-input.select{
+  padding: 0 10px;
+  width: 280px;
+}
+
+.modal-signup-select{
+  width:inherit;
+  height:inherit;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+}
+
+.modal-signup-input:first-child {
+  margin-top: 20px;
+}
+
+.modal-signup-input-checker {
+  width: 265px;
+  height: 13px;
+  margin: 0 auto;
+  margin-top: 5px;
+  font-size: 12px;
+  text-align: left;
+  color: #bbbbbb;
+  font-weight: 300;
+}
+
+.modal-signup-input-checker.checker-wrong {
+  color: #fd884d;
+}
+
+.modal-find-link:hover {
+  text-decoration: underline;
+}
+
+.modal-signup-notice {
+  height: 12px;
+  margin-top: 20px;
+  font-size: 10px;
+  text-align: center;
+  color: #9b9b9b;
+  font-weight: 300;
+}
+
+.modal-signup-notice > span {
+  color: #fd884d;
+  cursor: pointer;
+}
+
+.modal-signup-notice > span:hover {
+  text-decoration: underline;
+}
+
+.modal-signup-submit {
+  width: 285px;
+  height: 40px;
+  border-radius: 25px;
+  border: 1px solid #ff884d;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 0;
+  text-align: center;
+  background-color: #f9f9f9;
+  color: #ff994d;
+  cursor: pointer;
+}

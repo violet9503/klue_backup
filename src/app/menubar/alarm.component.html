@@ -1,0 +1,18 @@
+<div class="alarm-wrap">
+  <div class="alarm-title"><img src="/assets/img/Bookmark.png" align="center">알림</div>
+  <div class="alarm-container">
+    <table>
+      <tr *ngFor="let alarm of alarmList">
+        <td class="alarm-main-profile"><img [src]="alarm.profile"/></td>
+        <td class="alarm-main-content" [innerHTML]="alarm.content"></td>
+        <td class="alarm-main-time">{{alarm.created_at}}</td>
+      </tr>
+    </table>
+    <div class="alarm-btn-container">
+      <button class="alarm-page-move-btn" *ngIf="currentPage > 5" (click)="setPageList(false)"><</button>
+      <button class="alarm-page-btn" *ngFor="let num of pageList; let i=index" [class.selected]="currentPage == num" (click)="clickPage(num)" klueBtn>{{num}}</button>
+      <button class="alarm-page-move-btn" *ngIf="existNext" (click)="setPageList(true)">></button>
+    </div>
+  </div>
+</div>
+<div class="lecture-result-logo"><img src="/assets/img/KLUE_Logo_grey.png"/></div>

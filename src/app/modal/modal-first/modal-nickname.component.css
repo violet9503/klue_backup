@@ -1,0 +1,64 @@
+.modal-content-title{
+    height: 22px;
+    font-size: 20px;
+    text-align: center;
+    color: #4a4a4a;
+    margin-top:20px;
+    cursor: default;
+}
+.modal-nickname-notice{
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.29;
+    color: #9b9b9b;
+}
+.modal-nickname-warn{
+    text-align: center;
+    height: 13px;
+    font-size: 12px;
+    color: #fd884d;
+    margin-top:10px;
+}
+.modal-nickname-input{
+    width: 265px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+    display:block;
+    margin:0 auto;
+    margin-top:17px;
+    padding:0;
+    padding-left:18px;
+    border:0;
+    font-weight: 500;
+}
+.modal-nickname-input-checker{
+    width: 265px;
+    height: 13px;
+    margin: 0 auto;
+    margin-top:5px;
+    font-size: 12px;
+    text-align: left;
+    color: #bbbbbb;
+    font-weight: 300;
+}
+.modal-nickname-input-checker.checker-wrong{
+    color:#fd884d;
+}
+.modal-find-link:hover{
+    text-decoration: underline;
+}
+.modal-nickname-submit{
+    width: 285px;
+    height: 40px;
+    border-radius: 25px;
+    border: 1px solid #ff884d;
+    display:block;
+    margin:0 auto;
+    margin-top:15px;
+    padding:0;
+    text-align:center;
+    background-color: #f9f9f9;
+    color:#ff994d;
+    cursor: pointer;
+}

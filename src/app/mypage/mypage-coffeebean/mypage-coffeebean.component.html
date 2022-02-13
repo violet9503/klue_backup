@@ -1,0 +1,202 @@
+<div class="mypage-coffeebean-wrap">
+  <div class="mypage-coffeebean-title"><img src="/assets/img/Bookmark.png" align="center">나의 커피콩 현황</div>
+  <div class="mypage-coffeebean-container">
+    <div class="mypage-coffeebean-info">
+      <img src="/assets/img/Coffeebean_grey.png" class="mypage-coffeebean-img" align="center">
+      <span class="mypage-coffeebean-description">내가 보유한 커피콩</span>
+      <span class="mypage-coffeebean-quantity">15개</span>
+      <button class="mypage-coffeebean-charge-btn" (click)="clickCharge()" klueBtn>커피콩 충전하기</button>
+    </div>
+  </div>
+
+  <div class="mypage-coffeebean-title"><img src="/assets/img/Bookmark.png" align="center">구매 및 사용 내역 조회</div>
+
+  <div class="mypage-coffeebean-tap-container">
+    <ul class="mypage-coffeebean-check-tap">
+      <li [class.active]="isBuy" (click)="changeTap(true)">커피콩 구매</li>
+      <li [class.active]="!isBuy" (click)="changeTap(false)">커피콩 사용</li>
+    </ul>
+  </div>
+  <div class="mypage-coffeebean-container">
+    <div class="mypage-coffeebean-check-container">
+      <div>
+        <button [ngClass]="{'selected': term==7}" class="mypage-coffeebean-term-btn" (click)="changeTerm(7)" klueBtn>1주일</button>
+        <button [ngClass]="{'selected': term==1}" class="mypage-coffeebean-term-btn" (click)="changeTerm(1)" klueBtn>1개월</button>
+        <button [ngClass]="{'selected': term==3}" class="mypage-coffeebean-term-btn" (click)="changeTerm(3)" klueBtn>3개월</button>
+        <button [ngClass]="{'selected': term==6}" class="mypage-coffeebean-term-btn" (click)="changeTerm(6)" klueBtn>6개월</button>
+      </div>
+      <div class="mypage-coffeebean-name">조회기간</div>
+      <div>
+        <mypage-calendar [term]="term"></mypage-calendar>
+      </div>
+    </div>
+    <hr>
+    <div class="mypage-coffeebean-check-btn-container">
+      <button class="mypage-coffeebean-check-btn" klueBtn>조회하기</button>
+    </div>
+  </div>
+
+  <div class="mypage-coffeebean-title"><img src="/assets/img/Bookmark.png" align="center">조회 결과</div>
+  <div class="mypage-coffeebean-container">
+    <table *ngIf="isBuy">
+      <tr>
+        <th width="130px">일시</th>
+        <th width="200px">내용</th>
+        <th width="140px">결제 금액</th>
+        <th width="140px">결제 수단</th>
+        <th width="130px">상태</th>
+      </tr>
+      <tr>
+        <td>2017.06.06</td>
+        <td>커피콩 5개 구매</td>
+        <td>5,500원</td>
+        <td>신용카드</td>
+        <td>정상 구매</td>
+      </tr>
+      <tr>
+        <td>2017.06.06</td>
+        <td>커피콩 5개 구매</td>
+        <td>5,500원</td>
+        <td>신용카드</td>
+        <td>정상 구매</td>
+      </tr>
+      <tr>
+        <td>2017.06.06</td>
+        <td>커피콩 5개 구매</td>
+        <td>5,500원</td>
+        <td>신용카드</td>
+        <td>정상 구매</td>
+      </tr>
+      <tr>
+        <td>2017.06.06</td>
+        <td>커피콩 5개 구매</td>
+        <td>5,500원</td>
+        <td>신용카드</td>
+        <td>정상 구매</td>
+      </tr>
+      <tr>
+        <td>2017.06.06</td>
+        <td>커피콩 5개 구매</td>
+        <td>5,500원</td>
+        <td>신용카드</td>
+        <td>정상 구매</td>
+      </tr>
+      <tr>
+        <td>2017.06.06</td>
+        <td>커피콩 5개 구매</td>
+        <td>5,500원</td>
+        <td>신용카드</td>
+        <td>정상 구매</td>
+      </tr>
+      <tr>
+        <td>2017.06.06</td>
+        <td>커피콩 5개 구매</td>
+        <td>5,500원</td>
+        <td>신용카드</td>
+        <td>정상 구매</td>
+      </tr>
+      <tr>
+        <td>2017.06.06</td>
+        <td>커피콩 5개 구매</td>
+        <td>5,500원</td>
+        <td>신용카드</td>
+        <td>정상 구매</td>
+      </tr>
+      <tr>
+        <td>2017.06.06</td>
+        <td>커피콩 5개 구매</td>
+        <td>5,500원</td>
+        <td>신용카드</td>
+        <td>정상 구매</td>
+      </tr>
+      <tr>
+        <td>2017.06.06</td>
+        <td>커피콩 5개 구매</td>
+        <td>5,500원</td>
+        <td>신용카드</td>
+        <td>정상 구매</td>
+      </tr>
+      <tr>
+        <td colspan="5">
+          <button class="mypage-coffeebean-page-btn selected" klueBtn>1</button>
+          <button class="mypage-coffeebean-page-btn" klueBtn>2</button>
+          <button class="mypage-coffeebean-page-btn" klueBtn>3</button>
+          <button class="mypage-coffeebean-page-btn" klueBtn>4</button>
+          <button class="mypage-coffeebean-page-btn" klueBtn>5</button>
+        </td>
+      </tr>
+    </table>
+
+    <table *ngIf="!isBuy">
+      <tr>
+        <th width="130px">일시</th>
+        <th width="330px">내용</th>
+        <th width="140px">커피콩</th>
+        <th width="140px">잔여 커피콩</th>
+      </tr>
+      <tr>
+        <td>2017.06.06</td>
+        <td>"나교수 교수님 알고리즘 중간고사..." 노트 구매</td>
+        <td>20개</td>
+        <td>0개</td>
+      </tr>
+      <tr>
+        <td>2017.06.06</td>
+        <td>"나교수 교수님 알고리즘 중간고사..." 노트 구매</td>
+        <td>20개</td>
+        <td>0개</td>
+      </tr>
+      <tr>
+        <td>2017.06.06</td>
+        <td>"나교수 교수님 알고리즘 중간고사..." 노트 구매</td>
+        <td>20개</td>
+        <td>0개</td>
+      </tr>
+      <tr>
+        <td>2017.06.06</td>
+        <td>"나교수 교수님 알고리즘 중간고사..." 노트 구매</td>
+        <td>20개</td>
+        <td>0개</td>
+      </tr>
+      <tr>
+        <td>2017.06.06</td>
+        <td>"나교수 교수님 알고리즘 중간고사..." 노트 구매</td>
+        <td>20개</td>
+        <td>0개</td>
+      </tr>
+      <tr>
+        <td>2017.06.06</td>
+        <td>"나교수 교수님 알고리즘 중간고사..." 노트 구매</td>
+        <td>20개</td>
+        <td>0개</td>
+      </tr>
+      <tr>
+        <td>2017.06.06</td>
+        <td>"나교수 교수님 알고리즘 중간고사..." 노트 구매</td>
+        <td>20개</td>
+        <td>0개</td>
+      </tr>
+      <tr>
+        <td>2017.06.06</td>
+        <td>"나교수 교수님 알고리즘 중간고사..." 노트 구매</td>
+        <td>20개</td>
+        <td>0개</td>
+      </tr>
+      <tr>
+        <td>2017.06.06</td>
+        <td>"나교수 교수님 알고리즘 중간고사..." 노트 구매</td>
+        <td>20개</td>
+        <td>0개</td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <button class="mypage-coffeebean-page-btn selected" klueBtn>1</button>
+          <button class="mypage-coffeebean-page-btn" klueBtn>2</button>
+          <button class="mypage-coffeebean-page-btn" klueBtn>3</button>
+          <button class="mypage-coffeebean-page-btn" klueBtn>4</button>
+          <button class="mypage-coffeebean-page-btn" klueBtn>5</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

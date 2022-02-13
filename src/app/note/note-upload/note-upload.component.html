@@ -1,0 +1,114 @@
+<sidemenu></sidemenu>
+<div class="note-upload-wrap">
+  <div class="note-upload-info">
+    <span>- 파일 업로드 시, 5페이지 당 하나의 페이지가 미리보기 이미지로 사용됩니다. (ex. 총 10페이지 파일 - 1페이지, 6페이지)</span>
+    <span>- 미리보기 이미지의 하단 반절은 블러 처리가 됩니다.</span>
+    <span>- 여러 개의 파일을 업로드할 경우, 하나의 pdf 파일로 통합되어 올라갑니다.</span>
+  </div>
+  <div class="note-upload-title">관련 강의 여부</div>
+  <div class="note-upload-relative-container">
+    <div class="note-upload-relative-radio" #label>
+      <div class="note-upload-radio-container left">
+        <label for="yes" [style.color]="isRelative ? '#4a4a4a' : '#bbbbbb'">자료와 관련된 교내 강의가 있습니다.</label>
+        <input type="radio" id="yes" name="relative" value="yes" (click)="changeRelative(true, label)" [checked]="isRelative">
+      </div>
+      <div class="note-upload-radio-container right">
+        <label for="no">교내 강의와 관련 없는 자료입니다.</label>
+        <input type="radio" id="no" name="relative" value="no" (click)="changeRelative(false, label)" #inputRadio>
+      </div>
+    </div>
+    <div class="note-upload-relative-select" *ngIf="isRelative">
+      <hr>
+      <div class="note-upload-select-container">
+        연도
+        <div class="note-upload-select-box">
+          <select class="note-upload-select" #year name="year" (change)="searchLecture(input.value, year.value, term.value)">
+            <option value="">선택</option>
+            <option [value]="item" *ngFor="let item of optionYear" [selected]="item==savedLecture.year">{{item}}년</option>
+          </select>
+        </div>
+      </div>
+      <div class="note-upload-select-container">
+        학기
+        <div class="note-upload-select-box">
+          <select class="note-upload-select" #term name="term" (change)="searchLecture(input.value, year.value, term.value)">
+            <option value="">전체</option>
+            <option [value]="item" *ngFor="let item of optionTerm" [selected]="item==savedLecture.term">{{item}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="note-upload-input-container">
+        강의
+        <input type="text" class="note-upload-input" placeholder="강의명, 교수명, 과목코드로 검색(2자 이상)" (keyup)="searchLecture(input.value, year.value, term.value)" (focus)="searchLecture(input.value, year.value, term.value, true)" (blur)="selectLecture(null)" [value]="savedLecture.name" #input/>
+      </div>
+      <div class="note-upload-search-container" *ngIf="lectures" (scroll)="onScroll($event)">
+        <div class="note-upload-search-result" *ngFor="let lecture of lectures" (click)="selectLecture(lecture)">
+          <span class="note-upload-search-title">{{lecture.name | lectureSlice: 45}}</span>
+          <span class="note-upload-search-content">{{lecture.code}}-{{lecture.class}}</span> / <span class="note-upload-search-content">{{lecture.prof | lectureSlice: 30}} 교수님</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note-upload-title">파일 업로드</div>
+  <div class="note-upload-container">
+    <div class="note-upload-file-container" *ngFor="let item of fileArray; let i=index ">
+      <img [src]="item.extension" align="center">
+      <span class="note-upload-file-title">{{item.name}}</span>
+      <span class="note-upload-file-cancel right" (click)="fileRemove(i)">X</span>
+      <span class="note-upload-file-size"> {{ item.size/1024/1024 | number: '.2' }}MB</span>
+    </div>
+    <div class="note-upload-file-choice" (click)="upload.click()">
+      <img src="/assets/img/Upload_color.png" align="center">파일 선택하기
+    </div>
+  </div>
+
+  <div class="note-upload-title">노트 정보</div>
+  <div class="note-upload-info-container">
+    <div class="note-upload-input-container">
+      <div class="note-upload-info-name">제목</div>
+      <input type="text" class="note-upload-input" #noteTitle/>
+    </div>
+    <hr>
+    <div class="note-upload-select-container">
+      <div class="note-upload-info-name">카테고리</div>
+      <div class="note-upload-select-box">
+        <select class="note-upload-select" #category name="year">
+          <option value="">선택</option>
+          <option value="요점정리">요점정리</option>
+          <option value="문제풀이">문제풀이</option>
+          <option value="기타">기타</option>
+        </select>
+      </div>
+    </div>
+    <hr>
+    <div class="note-upload-coffeebean-container">
+      <div class="note-upload-info-name">가격</div>
+      <div class="note-upload-coffeebean-input" [style.color]="isFree ? '#d7d7d7' : ''">커피콩<input type="text" [disabled]="isFree" #coffeebean/>개</div>
+      <div class="note-upload-coffeebean-free"><input type="checkbox" id="free" (click)="clickFree(coffeebean)" checked disabled><label for="free" [style.color]="isFree ? '#fd884d' : '#bbbbbb'">무료</label></div>
+    </div>
+    <hr>
+    <div class="note-upload-input-container">
+      <div class="note-upload-info-name">태그</div>
+      <input type="text" class="note-upload-input" placeholder="ex) #컴퓨터학과 #중간고사 #꿀팁" #hash/>
+    </div>
+    <hr>
+    <div class="note-upload-content-container">
+      <div class="note-upload-info-name">내용</div>
+      <textarea class="note-upload-content-typing" placeholder="내용을 입력하세요." maxlength="2000" (keyup)="contentTyping(typing.value.length)" #typing></textarea>
+      <div class="note-upload-typing-length">{{contentLength}}/2000</div>
+      <button class="note-upload-register-btn" (click)="register(typing.value, inputRadio.checked, noteTitle.value, category.value, hash.value)" klueBtn>등록하기</button>
+    </div>
+  </div>
+  <div class="note-result-logo"><img src="/assets/img/KLUE_Logo_grey.png"/></div>
+  <input type="file" (change)="fileSelect($event)" accept=".jpg, .png, .txt, .hwp, .pdf, .doc" multiple style="display: none;" #upload/>
+</div>
+
+<div *ngIf="isOpen">
+  <div class="modal-wrap">
+    <div class="modal-row">
+      <img src="/assets/img/Loading_icon.gif">
+      <span>업로드 중입니다.<br>잠시만 기다려 주세요.</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,219 @@
+.lecture-index-title {
+  margin-top: 55px;
+  width: 100%;
+  font-size: 24px;
+  text-align: left;
+  color: #4a4a4a;
+}
+
+.lecture-index-title > img{
+  width:30px;
+  height:30px;
+  margin-right:5px;
+}
+
+.lecture-detail-content {
+  margin-top: 25px;
+  width: 100%;
+  min-height: 300px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  overflow: auto;
+}
+
+.lecture-eval-content {
+  margin: 30px 40px 20px;
+  height: auto;
+  min-height: 265px; /* 수정한 부분 */
+}
+
+.lecture-eval-point {
+  height: auto;
+  float: right;
+}
+
+.lecture-eval-point-item {
+  width: 60px;
+  font-size: 15px;
+  color: #9b9b9b;
+  text-align: right;
+  display: inline-block;
+}
+
+.lecture-main-rate-star{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left:19px;
+}
+
+.lecture-eval-point:nth-child(2) {
+  margin-top: 20px;
+}
+
+.lecture-eval-point-slider {
+  margin-left: 19px;
+  width: 130px;
+  display: inline-block;
+}
+
+.lecture-eval-point-bar {
+  width: 25px;
+  height: 10px;
+  margin-right: 1px;
+  background-color: #d7d7d7;
+  border: 0;
+  padding: 0px 0px;
+}
+
+.lecture-eval-point-bar:nth-child(1) {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.lecture-eval-point-bar:nth-child(5) {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.lecture-eval-content-user {
+  font-size: 26px;
+  text-align: left;
+  color: #4a4a4a;
+  display: block;
+}
+
+.lecture-eval-content-user-img {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  margin-right: 10px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.lecture-eval-content-subfix {
+  font-size: 18px;
+  color: #9b9b9b;
+}
+
+.lecutre-eval-content-modtime {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #9b9b9b;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.lecture-eval-content-context {
+  font-size: 14px;
+  line-height: 1.43;
+  text-align: left;
+  color: #9b9b9b;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.empty {
+  background-color: #d7d7d7;
+}
+
+.lecture-eval-reaction {
+  width: 720px;
+  height: 40px;
+  border-top: solid 1px #e5e5e5;
+  padding-top: 20px;
+  margin: 0 auto;
+  color: #e5e5e5;
+  font-size: 14px;
+}
+
+.lecture-eval-reaction-left > div{
+  cursor: pointer;
+  float:left;
+}
+
+.lecture-eval-reaction-left > div > img{
+  width: 20px;
+  height: 20px;
+  margin-right:10px;
+}
+
+.lecture-eval-reaction-right {
+  float: right;
+  color: #9b9b9b;
+  cursor: pointer;
+}
+
+.lecture-eval-reaction-right >img{
+  width:20px;
+  height:20px;
+  margin-left:30px;
+}
+
+
+.lecture-eval-reaction-right >span{
+  margin-left:5px;
+}
+
+/* 수정한 부분 */
+
+.lecture-result-logo {
+  width: 120px;
+  margin: 50px auto 0;
+}
+
+.lecture-result-logo > img {
+  width: 120px;
+  height: 40px;
+}
+
+.lecture-eval-rate-star-img {
+  display: inline-block;
+  float: left;
+  width: 18px;
+  height: 17px;
+  vertical-align: middle;
+  background-image: url('/assets/img/Empty_Star.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: 0 4px;
+  background-size: 17px;
+}
+
+.star-full {
+  background-image: url('/assets/img/Star.png');
+  background-size: contain;
+}
+
+.point-bar-full{
+  background-color:#feae75;
+}
+
+.lecture-eval-category-container {
+  height: 17px;
+  margin-top: 15px;
+}
+
+hr{
+  margin: 20px 0;
+  border: solid 1px #e5e5e5;
+}
+
+.lecture-eval-title>span:first-child{
+  font-size: 24px;
+  color: #4a4a4a;
+  margin-right:20px;
+}
+
+.lecture-eval-title>span:nth-child(2){
+  font-size: 18px;
+  color: #9b9b9b;
+}
+
+.lecture-eval-title>span:last-child{
+  font-size: 14px;
+  float: right;
+  color: #bbbbbb;
+  margin-top: 10px;
+}

@@ -1,0 +1,9 @@
+.index-menubar-detail{
+  width: 80px;
+  font-size: 14px;
+  text-align: center;
+  color: #ffffff;
+  margin-top:0;
+  display:inline-block;
+  cursor: pointer;
+}

@@ -1,0 +1,257 @@
+
+.lecture-index-search {
+  border-radius: 5px;
+  width: 800px;
+  min-height: 125px;
+  background-color: #ffffff;
+  margin-top: 50px;
+}
+
+.lecture-search-content {
+  width: 800px;
+  min-height: 105px;
+  padding-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.lecture-search-content-title {
+  margin-left: 30px;
+  font-size: 20px;
+  color: #4a4a4a;
+  display: block;
+}
+
+.lecture-search-content-context {
+  width: 740px;
+  height: 40px;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.lecture-search-content-context-text { /* 수정한 부분 */
+  width: 640px;
+  height: 40px;
+  border: 0;
+  padding: 0 0 0 20px;
+  font-size: 14px;
+  float: left;
+  background-color: #f0f0f0;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.lecture-search-content-context-btn{
+  width: 80px;
+  height: 40px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  cursor: pointer;
+}
+
+.lecture-search-content-toggle {
+  width: 35px;
+  height: 35px;
+  background-color: #fff;
+  color: #fd884d;
+  border: 0;
+  border-radius: 35px;
+  position: absolute;
+  padding: 0;
+  font-size: 20px;
+  top: 105px;
+  left: 380px;
+}
+
+.lecture-search-category {
+  width: 800px;
+  padding: 30px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.lecture-search-category-aligner {
+  width: 740px;
+  height: 30px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.lecture-search-category-aligner:last-child{
+  margin-bottom:0;
+}
+
+.lecture-search-category-aligner>div{
+  display: inline;
+  margin-right:30px;
+}
+
+.lecture-search-category-aligner>div:last-child{
+  margin-right:0;
+}
+
+.lecture-search-category-name {
+  font-size: 12px;
+  color: #9b9b9b;
+  display: inline-block;
+  width:35px;
+}
+
+.lecture-search-category-container {
+  width: 165px;
+  height: 30px;
+  font-weight: 400;
+  border-radius: 25px;
+  padding-left: 10px;
+  background-color: #f0f0f0;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.lecture-search-category-select {
+  font-size: 12px;
+  color: #4a4a4a;
+  width: inherit;
+  height: inherit;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+}
+
+.lecture-search-option {
+  width: 800px;
+  height: 87px;
+  padding-top: 33px;
+  background-color: #ffffff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.lecture-search-option-row {
+  width: 740px;
+  margin: 0 auto;
+  height: 16px;
+}
+
+.lecture-search-option-row:nth-of-type(2) {
+  margin-top: 30px;
+}
+
+.lecture-search-option-content {
+  width: 230px;
+  height: 16px;
+  margin-right: 25px;
+  float: left;
+}
+
+.lecture-search-option-content:last-child {
+  margin-right: 0;
+}
+
+.lecture-search-option-content > span:first-child {
+  width: 43px;
+  text-align: left;
+  font-size: 12px;
+  color: #9b9b9b;
+  display: block;
+  float: left;
+}
+
+.lecture-search-option-content > span:not(first-child) {
+  width: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #ffbd85;
+  display: block;
+  float: left;
+
+}
+
+.lecture-search-option-slider {
+  width: 166px;
+  margin-top: 5px;
+  height: 5px;
+  position: relative;
+  display: block;
+  float: left;
+}
+
+.lecture-search-option-button {
+  position: absolute;
+  left: 62px;
+  top: -3px;
+  width: 10px;
+  height: 10px;
+  background-color: #fd884d;
+  border: 0;
+  padding: 0;
+  border-radius: 10px;
+}
+
+.lecture-search-option-button:nth-of-type(2) {
+  left: 156px;
+}
+
+.lecture-search-option-between {
+  position: absolute;
+  width: 104px;
+  height: 5px;
+  left: 62px;
+  top: 0px;
+  background-color: #fd884d;
+}
+
+.lecture-search-option-val {
+  position: absolute;
+  left: 0px;
+  top: -3px;
+  width: 10px;
+  height: 10px;
+  background-color: #e5e5e5;
+  border: 0;
+  padding: 0;
+  border-radius: 10px;
+}
+
+.lecture-search-option-val:nth-child(2) {
+  left: 31px;
+}
+
+.lecture-search-option-val:nth-child(3) {
+  left: 62px;
+}
+
+.lecture-search-option-val:nth-child(4) {
+  left: 93px;
+}
+
+.lecture-search-option-val:nth-child(5) {
+  left: 124px;
+}
+
+.lecture-search-option-val:nth-child(6) {
+  left: 156px;
+}
+
+.lecture-search-btn-container{
+  width:100%;
+  height:60px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding:15px 30px;
+  text-align: right;
+}
+
+.lecture-search-btn{
+  width: 120px;
+  height: 30px;
+  border-radius: 25px;
+  background-color: #ffffff;
+  border: solid 1px #fd884d;
+  text-align: center;
+  font-size: 12px;
+  color: #fd884d;
+  margin-left:15px;
+}

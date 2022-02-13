@@ -1,0 +1,93 @@
+<div class="mypage-sidemenu-wrap">
+  <div class="mypage-sidemenu">
+    <div class="mypage-sidemenu-title">{{menuTitle}}</div>
+    <hr>
+    <div class="mypage-sidemenu-link" *ngIf="isMain">
+      <div class="mypage-sidemenu-link-container" [ngClass]="{'selected': url=='/mypage/account'}"
+           (click)="routingService.routing('mypage','account')">
+        <span>계정설정</span><span class="mypage-sidemenu-link-arrow">></span>
+      </div>
+      <div class="mypage-sidemenu-link-container" [ngClass]="{'selected': url=='/mypage/password'}"
+           (click)="routingService.routing('mypage','password')">
+        <span>비밀번호 변경</span><span class="mypage-sidemenu-link-arrow">></span>
+      </div>
+      <hr>
+      <div class="mypage-sidemenu-link-container" (click)="routingService.routing('mypage')">
+        <span>돌아가기</span>
+      </div>
+    </div>
+
+    <div class="mypage-sidemenu-link" *ngIf="isTable">
+      <div class="mypage-sidemenu-timetable">
+        <select class="mypage-sidemenu-timetable-select" (change)="selectChange(select.value)" #select>
+          <option *ngFor="let time of tableTerm; let i=index;" [value]="time.val" [selected]="mypageService.year==time.year&&mypageService.term==time.term">{{time.year}}년 {{time.term}}</option>
+        </select>
+      </div>
+
+      <div class="mypage-sidemenu-link-container" *ngFor="let item of timeTables"
+           [ngClass]="{'selected': url=='/mypage/timetable/'+item.id}"
+           (click)="routingService.routingRefresh('mypage/timetable', item.id.toString())">
+        <span>{{item.name}}</span>
+      </div>
+      <div class="mypage-sidemenu-link-container" (click)="loadInput()" id="timetable-append-link">
+        <span>+ 시간표 추가</span>
+      </div>
+    </div>
+
+    <div class="mypage-sidemenu-link" *ngIf="isCoffee">
+      <div class="mypage-sidemenu-link-container" [ngClass]="{'selected': url=='/mypage/coffeebean'}"
+           (click)="routingService.routing('mypage','coffeebean')">
+        <span>커피콩</span><span class="mypage-sidemenu-link-arrow">></span>
+      </div>
+      <div class="mypage-sidemenu-link-container" [ngClass]="{'selected': url=='/mypage/coffeecup'}"
+           (click)="routingService.routing('mypage','coffeecup')">
+        <span>커피잔</span><span class="mypage-sidemenu-link-arrow">></span>
+      </div>
+    </div>
+
+    <div class="mypage-sidemenu-link" *ngIf="isHistory">
+      <div class="mypage-sidemenu-link-container" [ngClass]="{'selected': url=='/mypage/history/eval'}"
+           (click)="routingService.routing('mypage/history','eval')">
+        <span>강의평가</span><span class="mypage-sidemenu-link-arrow">></span>
+      </div>
+      <div class="mypage-sidemenu-link-container" [ngClass]="{'selected': url=='/mypage/history/note'}"
+           (click)="routingService.routing('mypage/history','note')">
+        <span>공부노트</span><span class="mypage-sidemenu-link-arrow">></span>
+      </div>
+      <div class="mypage-sidemenu-link-container" [ngClass]="{'selected': url=='/mypage/history/point'}"
+           (click)="routingService.routing('mypage/history','point')">
+        <span>포인트</span><span class="mypage-sidemenu-link-arrow">></span>
+      </div>
+      <div class="mypage-sidemenu-link-container" [ngClass]="{'selected': url=='/mypage/history/report'}"
+           (click)="routingService.routing('mypage/history','report')">
+        <span>신고 및 문의</span><span class="mypage-sidemenu-link-arrow">></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mypage-sidemenu-option" *ngIf="isTable">
+    <div (click)="mypageService.imgRequest(tableName)">
+      <img src="/assets/img/Image.png">
+      <span>이미지로<br>저장</span>
+    </div>
+    <div (click)="nameRewrite()">
+      <img src="/assets/img/Modify_grey.png">
+      <span>시간표 이름<br>수정</span>
+    </div>
+    <div (click)="tableDelete()">
+      <img src="/assets/img/Delete_grey.png">
+      <span>시간표<br>삭제</span>
+    </div>
+  </div>
+</div>
+<div *ngIf="isOpen">
+  <div class="modal-wrap" (click)="modalOut()">
+    <div class="modal-row">
+      <div class="modal-content" (mouseleave)="isOut=true" (mouseenter)="isOut=false">
+        <span>시간표 이름을 입력해 주세요.</span>
+        <input class="mypage-sidemenu-timetable-input" type="text" [value]="setName" #input>
+        <button class="modal-btn" klueBtn (click)="appendTable(input)">설정하기</button>
+      </div>
+    </div>
+  </div>
+</div>

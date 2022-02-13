@@ -1,0 +1,122 @@
+<div class="mypage-profile-top">
+  <div class="mypage-profile-top-aligner" *ngIf="isSelect"></div>
+  <div class="mypage-profile-top-info">
+    <div class="mypage-profile-top-info-img">
+      <img [src]="userService.userInfo.profile.replace('medium', 'large')" class="mypage-profile-top-info-userimg">
+      <div class="mypage-profile-top-info-changeimg"><img src="/assets/img/Camera.png" (click)="profileSelect()"></div>
+    </div>
+    <span class="mypage-profile-top-info-username">{{userService.userInfo.name}}</span>
+  </div>
+  <div class="mypage-profile-top-intro" *ngIf="isSelect" (mouseenter)="focusUpload(true)" (mouseleave)="focusUpload(false)">
+    <div class="mypage-profile-top-intro-triangle"></div>
+    <span (click)="upload.click()">사진 선택</span>
+    <hr>
+    <span (click)="clickDelete()" [ngClass]="{'mypage-profile-color-grey': isProfileDefault}">기본 프로필로 변경</span>
+  </div>
+</div>
+<input name="image" type="file" accept=".jpg, .png, .jpeg" (change)="onChangeImage($event)" style="display: none;" #upload>
+<div class="mypage-profile-summary">
+  <div class="mypage-profile-summary-aligner">
+    <div class="mypage-profile-summary-auth">
+      <img src="/assets/img/MyInfo_Univ.png">
+      <span>{{mypageService.userInfo.sc_id | schoolReplace}} <span>학부</span></span>
+    </div>
+    <div class="mypage-profile-summary-permission">
+      <img src="/assets/img/Ticket.png" *ngIf="mypageService.userInfo.read_lec_eval_authority">
+      <img src="/assets/img/Ticket_disable.png" *ngIf="!mypageService.userInfo.read_lec_eval_authority">
+      <span *ngIf="mypageService.userInfo.read_lec_eval_authority">강의평가 열람 가능</span>
+      <span *ngIf="!mypageService.userInfo.read_lec_eval_authority">강의평가 열람 불가능</span>
+    </div>
+    <div class="mypage-profile-summary-point">
+      <img src="/assets/img/Points.png">
+      <span>{{mypageService.userInfo.points}}<span>포인트</span></span>
+    </div>
+  </div>
+</div>
+
+<div class="mypage-profile-detail">
+
+  <div class="mypage-profile-info">
+    <span class="mypage-profile-info-title">개인정보</span>
+    <div class="mypage-profile-info-img">
+      <img src="/assets/img/Personal_Info.png">
+      <div class="mypage-profile-info-smallimg">
+        <img src="/assets/img/School_color.png">
+        <img src="/assets/img/Contact_grey.png">
+        <img src="/assets/img/Link_grey.png" *ngIf="!mypageService.userInfo.facebook && !mypageService.userInfo.google">
+        <img src="/assets/img/Link_color.png" *ngIf="mypageService.userInfo.facebook || mypageService.userInfo.google">
+      </div>
+    </div>
+
+    <div class="mypage-profile-info-auth-container">
+      <div>
+        <div class="mypage-profile-info-name">학교 인증</div>
+        <span class="mypage-profile-info-description">학교 인증 완료</span>
+      </div>
+      <div>
+        <div class="mypage-profile-info-name">연락처</div>
+        <span class="mypage-profile-info-description">등록된 번호 없음</span>
+      </div>
+      <div>
+        <div class="mypage-profile-info-name">SNS연동</div>
+
+        <span class="mypage-profile-info-description" *ngIf="!mypageService.userInfo.facebook && !mypageService.userInfo.google">연동된 계정 없음</span>
+        <span class="mypage-profile-info-description" *ngIf="mypageService.userInfo.facebook || mypageService.userInfo.google">
+          <img src="/assets/img/SocialLogin_Facebook.png" *ngIf="mypageService.userInfo.facebook" align="center">
+          <img src="/assets/img/SocialLogin_Google.png" *ngIf="mypageService.userInfo.google" align="center">
+          계정 연동됨
+        </span>
+      </div>
+    </div>
+    <span class="mypage-profile-info-link" (click)="sharedService.stateChange('check')">> 개인정보 수정하기</span>
+  </div>
+
+  <div class="mypage-profile-rectangle">
+    <span class="mypage-profile-info-title">노트 업로드 수</span>
+    <div class="mypage-profile-rectangle-img">
+      <img src="/assets/img/Upload_grey.png">
+      <span>{{mypageService.userInfo.note_count}}개</span>
+    </div>
+    <span class="mypage-profile-rectangle-description">인기 업로더가 되어 보세요!</span><span class="mypage-profile-info-link">> 노트 업로드하기</span>
+  </div>
+
+  <div class="mypage-profile-rectangle">
+    <span class="mypage-profile-info-title">노트 구매 수</span>
+    <div class="mypage-profile-rectangle-img">
+      <img src="/assets/img/Download_grey.png">
+      <span>{{mypageService.userInfo.purchase_note_count}}개</span>
+    </div>
+    <span class="mypage-profile-rectangle-description">구매한 노트가 도움이 되었나요?</span><span class="mypage-profile-info-link">> 구매한 노트 다운받기</span>
+  </div>
+
+
+  <div class="mypage-profile-rectangle">
+    <span class="mypage-profile-info-title">나의 커피콩</span>
+    <div class="mypage-profile-rectangle-img">
+      <img src="/assets/img/Coffeebean_grey.png">
+      <span>{{mypageService.userInfo.coffee_bean}}개</span>
+    </div>
+    <span class="mypage-profile-rectangle-description">준비 중입니다!</span><span class="mypage-profile-info-link">> 준비 중입니다!</span>
+  </div>
+
+  <div class="mypage-profile-rectangle">
+    <span class="mypage-profile-info-title">나의 커피잔</span>
+    <div class="mypage-profile-rectangle-img">
+      <img src="/assets/img/Coffeecup.png">
+      <span>0잔</span>
+    </div>
+    <span class="mypage-profile-rectangle-description">준비 중입니다!</span>
+    <span class="mypage-profile-info-link">> 준비 중입니다!</span>
+  </div>
+</div>
+<div *ngIf="isOpen">
+  <div class="modal-wrap" (click)="modalOut()">
+    <div class="modal-row">
+      <div class="modal-content" (mouseleave)="isOut=true" (mouseenter)="isOut=false">
+        <span>프로필 사진 영역을 설정해주세요.</span>
+        <img-cropper #cropper [image]="imageStorage" [settings]="cropperSettings"></img-cropper>
+        <button class="modal-btn" klueBtn (click)="imageUpload()">설정하기</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="lecture-index-main" *ngIf="lecture">
+    <div class="lecture-index-main-row">
+        <div class="lecture-index-main-left">
+            <div class="lecture-index-main-pentagon" >
+              <svg id="lecture_{{lecture.id}}">
+              </svg>
+            </div>
+        </div>
+        <div class="lecture-index-main-right">
+            <div class="lecture-index-main-title">{{lecture.name}} </div>
+            <div class="lecture-title-professor">{{lecture.prof}} 교수님</div>
+
+          <div class="lecture-write-total-eval-container">
+            <div class="lecture-index-main-rate">
+              <span style="vertical-align: super;">평균 총평</span>
+              <div class="lecture-main-rate-star" id="total_eval">
+                <span class="lecture-eval-rate-star-img"></span>
+                <span class="lecture-eval-rate-star-img"></span>
+                <span class="lecture-eval-rate-star-img"></span>
+                <span class="lecture-eval-rate-star-img"></span>
+                <span class="lecture-eval-rate-star-img"></span>
+              </div>
+              <span class="lecture-main-rate-point">{{lecture.star_total.toFixed(2)}}</span>
+            </div>
+          </div>
+
+          <div class="lecture-index-main-info">
+              <table class="lecture-main-info-table">
+                  <tbody>
+                      <tr><th>개설학기</th><td>{{lecture.year}}-{{lecture.term}}</td><th>과목코드</th><td>{{lecture.code}}</td></tr>
+                      <tr><th>이수구분</th><td>{{lecture.type}}</td><th>강의시간</th><td>{{(lecture.time | lectureTimelocation: lecture.location).split(",")[0]}}</td></tr>
+                      <tr><th>학점</th><td>{{lecture.credit}}학점</td><th>&nbsp;</th><td>{{(lecture.time | lectureTimelocation: lecture.location).split(",")[1]}}</td></tr>
+                      <tr><th></th><td></td><th></th><td>{{(lecture.time | lectureTimelocation: lecture.location).split(",")[2]}}</td></tr>
+                      <tr><th></th><td></td><th></th><td>{{(lecture.time | lectureTimelocation: lecture.location).split(",")[3]}}</td></tr>
+                  </tbody>
+              </table>
+          </div>
+        </div>
+    </div>
+    <div class="lecture-index-main-row lecture-index-main-action">
+        <div class="lecture-index-main-action-right">
+          <div class="lecture-info-relative">
+            <select class="lecture-info-relative-select" name="학수번호" (change)="lectureEval($event)">
+              <option value="">{{lecture.year+"년 "+ lecture.term+ " "+ lecture.class +"분반 ("+lecture.prof+" 교수님)"}}</option>
+
+              <option value="{{related_info.id}}" *ngFor="let related_info of lecture.related_lecture; let i=index">
+                {{related_info.year+"년 "+ related_info.term+" "+related_info.class+"분반 ("+related_info.prof+" 교수님)"}}
+              </option>
+            </select>
+          </div>
+          <button (click)="lectureWrite(lecture.id)" klueBtn="Evaluation_Write_white"><img class="lecture-search-btn-img" align="center" src="/assets/img/Evaluation_Write.png"/>강의평가 작성하기</button>
+        </div>
+    </div>
+</div>

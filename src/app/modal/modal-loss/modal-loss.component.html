@@ -1,0 +1,51 @@
+<div class="modal-content-title">
+    <span>아이디 및 비밀번호 찾기</span>
+</div>
+
+<div *ngIf="!findComplete">
+  <ul class="modal-find-check-tap">
+    <li [class.active]="isId" (click)="changeTap(true)">아이디 찾기</li>
+    <li [class.active]="!isId" (click)="changeTap(false)">비밀번호 찾기</li>
+  </ul>
+  <div class="modal-find-content-container" *ngIf="isId">
+    <div class="modal-find-help">인증한 학교 이메일 주소를 입력해주세요.</div>
+
+    <div class="modal-find-input select">
+      <select class="modal-find-select" #sc_id name="소속 학교" (change)="sc_idChange($event)">
+        <option value="">소속 학교</option>
+        <option value="ku">고려대학교 (안암 캠퍼스)</option>
+        <option value="ku_sejong">고려대학교 (세종 캠퍼스)</option>
+      </select>
+    </div>
+    <div class="modal-find-wrong">{{findSelectWrong}}</div>
+
+    <input type="text" class="modal-find-input email" placeholder="학교 이메일" #sc_email/><span>{{schoolEmail}}</span>
+    <div class="modal-find-wrong">{{findInputWrong}}</div>
+    <div class="modal-find-row">
+      <button class="modal-find-btn" (click)="clickFindId(sc_id.value, sc_email.value)" klueBtn>아이디 찾기</button>
+    </div>
+  </div>
+
+  <div class="modal-find-content-container" *ngIf="!isId">
+    <div class="modal-find-help">클루 아이디를 입력해주세요.</div>
+
+    <input type="text" class="modal-find-input" placeholder="아이디" #id/>
+    <div class="modal-find-wrong">{{findInputWrong}}</div>
+    <div class="modal-find-row">
+      <button class="modal-find-btn" (click)="clickFindPw(id.value)" klueBtn>비밀번호 찾기</button>
+    </div>
+  </div>
+</div>
+<span class="modal-find-link" *ngIf="!findComplete" (click)="sharedService.stateChange('login')">> 로그인창으로 돌아가기</span>
+
+<div *ngIf="findComplete">
+  <div class="modal-find-complete" *ngIf="isId">회원님의 아이디는 <br><span>{{userId}}</span>입니다.</div>
+  <div class="modal-find-row" *ngIf="isId">
+    <button class="modal-find-btn" klueBtn (click)="sharedService.stateChange('login')">로그인창으로 돌아가기</button>
+  </div>
+
+  <div class="modal-find-complete" *ngIf="!isId">비밀번호 재설정 안내 메일을 발송하였습니다.<br>인증 학교 메일함을 확인해주세요!</div>
+  <div class="modal-find-row" *ngIf="!isId">
+    <button class="modal-find-btn" klueBtn gotoIndex>클루 메인 화면으로 돌아가기</button>
+  </div>
+</div>

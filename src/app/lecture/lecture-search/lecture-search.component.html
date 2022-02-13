@@ -1,0 +1,124 @@
+<div class="lecture-index-search">
+  <div class="lecture-search-content">
+    <span class="lecture-search-content-title">강의평가 검색</span>
+    <div class="lecture-search-content-context">
+      <input class="lecture-search-content-context-text" type="text" [value]="searchValue"
+             placeholder="강의명, 교수명, 과목코드로 검색" #keyword (keyup.enter)="search(keyword.value)"/>
+      <img class="lecture-search-content-context-btn" src="/assets/img/Button_SearchBox.png"
+           (click)="search(keyword.value)"/>
+    </div>
+    <button class="lecture-search-content-toggle" *ngIf="!isOpen" (click)="isClick()">∨<!--ㄷ한자 --></button>
+    <button class="lecture-search-content-toggle" *ngIf="isOpen" (click)="isClick()" [style.top]="(savedFilter.year && savedFilter.term) ? '425px' : '375px'">∧<!--ㄷ한자 --></button>
+  </div>
+  <div class="lecture-search-category" [style.display]="isOpen ? 'block' : 'none'">
+    <div class="lecture-search-category-aligner">
+      <div>
+        <span class="lecture-search-category-name">연도</span>
+        <div class="lecture-search-category-container">
+          <select class="lecture-search-category-select" (change)="filterChange('year', $event)">
+            <option value="" selected>전체</option>
+            <option *ngFor="let item of savedOptions.year" [value]="item">{{item}}</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <span class="lecture-search-category-name">학기</span>
+        <div class="lecture-search-category-container">
+          <select class="lecture-search-category-select" (change)="filterChange('term', $event)">
+            <option value="" selected>전체</option>
+            <option *ngFor="let item of savedOptions.term" [value]="item">{{item}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="lecture-search-category-aligner" *ngIf="savedFilter.year && savedFilter.term">
+      <div>
+        <span class="lecture-search-category-name">구분</span>
+        <div class="lecture-search-category-container">
+          <select class="lecture-search-category-select" (change)="filterChange('category', $event)">
+            <option value="" selected>전체</option>
+            <option *ngFor="let item of savedOptions.category" [value]="item.category">{{item.category}}</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <span class="lecture-search-category-name">대분류</span>
+        <div class="lecture-search-category-container">
+          <select class="lecture-search-category-select" (change)="filterChange('college', $event)">
+            <option value="" selected>전체</option>
+            <option *ngIf="!savedFilter.category">구분을 먼저 선택해주세요.</option>
+            <option *ngFor="let item of savedOptions.college" [value]="item.college">{{item.college}}</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <span class="lecture-search-category-name">소분류</span>
+        <div class="lecture-search-category-container">
+          <select class="lecture-search-category-select" (change)="filterChange('department', $event)">
+            <option value="" selected>전체</option>
+            <option *ngIf="!savedFilter.college">대분류를 먼저 선택해주세요.</option>
+            <option *ngFor="let item of savedOptions.department" [value]="item.department">{{item.department}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="lecture-search-option" [style.display]="isOpen ? 'block' : 'none'">
+    <div class="lecture-search-option-row">
+      <div class="lecture-search-option-content">
+        <span>총평</span><span class="lecture-search-option-value" minValue>1</span>
+        <div class="lecture-search-option-slider">
+          <nouislider slider-selected [connect]="true" [min]="1" [max]="5" [(ngModel)]="searchRange" [config]="conf"
+                      style="margin:0 10px 0 10px;"></nouislider>
+        </div>
+        <span class="lecture-search-option-value" maxValue>5</span>
+      </div>
+      <div class="lecture-search-option-content">
+        <span>출첵</span><span class="lecture-search-option-value" minValue>1</span>
+        <div class="lecture-search-option-slider">
+          <nouislider slider-selected [connect]="true" [min]="1" [max]="5" [(ngModel)]="searchRange" [config]="conf"
+                      style="margin:0 10px 0 10px;"></nouislider>
+        </div>
+        <span class="lecture-search-option-value" maxValue>5</span>
+      </div>
+      <div class="lecture-search-option-content">
+        <span>학점</span><span class="lecture-search-option-value" minValue>1</span>
+        <div class="lecture-search-option-slider">
+          <nouislider slider-selected [connect]="true" [min]="1" [max]="5" [(ngModel)]="searchRange" [config]="conf"
+                      style="margin:0 10px 0 10px;"></nouislider>
+        </div>
+        <span class="lecture-search-option-value" maxValue>5</span>
+      </div>
+    </div>
+    <div class="lecture-search-option-row">
+      <div class="lecture-search-option-content">
+        <span>난이도</span><span class="lecture-search-option-value" minValue>1</span>
+        <div class="lecture-search-option-slider">
+          <nouislider slider-selected [connect]="true" [min]="1" [max]="5" [(ngModel)]="searchRange" [config]="conf"
+                      style="margin:0 10px 0 10px;"></nouislider>
+        </div>
+        <span class="lecture-search-option-value" maxValue>5</span>
+      </div>
+      <div class="lecture-search-option-content">
+        <span>학습량</span><span class="lecture-search-option-value" minValue>1</span>
+        <div class="lecture-search-option-slider">
+          <nouislider slider-selected [connect]="true" [min]="1" [max]="5" [(ngModel)]="searchRange" [config]="conf"
+                      style="margin:0 10px 0 10px;"></nouislider>
+        </div>
+        <span class="lecture-search-option-value" maxValue>5</span>
+      </div>
+      <div class="lecture-search-option-content">
+        <span>성취감</span><span class="lecture-search-option-value" minValue>1</span>
+        <div class="lecture-search-option-slider">
+          <nouislider slider-selected [connect]="true" [min]="1" [max]="5" [(ngModel)]="searchRange" [config]="conf"
+                      style="margin:0 10px 0 10px;"></nouislider>
+        </div>
+        <span class="lecture-search-option-value" maxValue>5</span>
+      </div>
+    </div>
+  </div>
+  <div class="lecture-search-btn-container" [style.display]="isOpen ? 'block' : 'none'">
+    <button class="lecture-search-btn" (click)="resetOption()" klueBtn>초기화</button>
+    <button class="lecture-search-btn" (click)="search(keyword.value)" klueBtn>검색</button>
+  </div>
+</div>

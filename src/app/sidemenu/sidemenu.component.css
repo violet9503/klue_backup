@@ -1,0 +1,151 @@
+@media all and (max-width: 1023px) {
+  .lecture-point{
+    left: 5px;
+  }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1279px) {
+  .lecture-point{
+    left: calc((100% - 600px) / 2 - 200px - 25px);
+  }
+}
+
+@media all and (min-width: 1280px) {
+  .lecture-point{
+    left: calc((100% - 800px) / 2 - 200px - 25px);
+  }
+}
+
+.lecture-point {
+  position: absolute;
+  top: 100px;
+  width: 200px;
+  min-height: 250px;
+  box-sizing: border-box;
+  padding-top: 21px;
+  padding-bottom: 21px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: solid 1px #e5e5e5;
+  text-align: center;
+}
+
+.lecture-point-image {
+  margin: 0 auto;
+  width: 84px;
+  height: 84px;
+  border-radius: 42px;
+  border: 2px solid #fd884d;
+}
+
+.lecture-point-image > img {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  margin: 2px;
+}
+
+.lecture-point-info {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.lecture-point-info > span {
+  font-size: 18px;
+  text-align: center;
+  color: #4a4a4a;
+  display: block;
+}
+
+.lecture-point-info-content {
+  margin-top: 10px;
+  float: left;
+  border-collapse: collapse;
+  width: 98px;
+  border-left: solid 2px #e5e5e5;
+}
+
+.lecture-point-info-content:nth-of-type(1) {
+  border-left-width: 0px;
+}
+
+.lecture-point-info-content > span {
+  display: block;
+}
+
+.lecture-point-info-content > span:first-child {
+  font-size: 10px;
+  text-align: center;
+  color: #9b9b9b;
+}
+
+.lecture-point-info-content > span:nth-child(2) {
+  margin-top: 3px;
+  font-size: 18px;
+  text-align: center;
+  color: #fd884d;
+}
+
+.lecture-point-info-content > span > span {
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.lecture-point-info-content > span > img {
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+}
+
+.lecture-point-info:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+
+.lecture-point-btn {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  height: 35px;
+  border-radius: 25px;
+  border: solid 1px #fd884d;
+  width: 160px;
+  font-size: 12px;
+  text-align: center;
+  color: #fd884d;
+  background-color: #fff;
+}
+
+.lecture-point-logo {
+  width: 90px;
+  height: 30px;
+}
+
+.lecture-point-notlogin-description {
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  color: #4a4a4a;
+  margin: 25px auto;
+}
+
+.lecture-point-notlogin-link {
+  font-size: 12px;
+  text-align: center;
+  color: #fd884d;
+}
+
+.lecture-point-notlogin-link > span:first-child {
+  margin-right: 40px;
+}
+
+.lecture-point-notlogin-link > span {
+  cursor: pointer;
+}
+
+.notlogin {
+  border: solid 1px #bbbbbb;
+  color: #bbbbbb;
+  margin-top: 20px;
+}

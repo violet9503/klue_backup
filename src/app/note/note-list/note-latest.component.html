@@ -1,0 +1,53 @@
+<div class="note-search-result-title"><img src="/assets/img/Bookmark.png" align="center">최신 공부노트</div>
+<div class="note-list-wrap">
+  <div class="note-list-content" *ngFor="let note of notes" (click)="clickNoteView(note.state, note.id)">
+    <div class="note-list-content-img" [style.backgroundImage]="'url('+s3_url+'/'+note.file_path+'/0)'"></div>
+    <div class="note-list-content-context">
+      <div class="note-list-context-top">
+        <div class="note-list-context-main">
+          <span class="note-list-context-title">{{note.title}}</span>
+          <span class="note-list-context-user"><img [src]="note.profile" align="center"/>{{note.name}}</span>
+        </div>
+        <div class="note-list-context-meta">
+          <span class="note-list-context-meta-point"><img src="/assets/img/View_grey.png" align="center">{{note.hit}}</span>
+          <span class="note-list-context-meta-point"><img src="/assets/img/Likes_empty_StudyNoteInfo.png" align="center">{{note.like_count}}</span>
+          <span class="note-list-context-meta-point"><img src="/assets/img/Comment_StudyNoteInfo.png" align="center">{{note.comments_count}}</span>
+        </div>
+      </div>
+      <div class="note-list-context-spec">
+        <div class="note-list-context-spec-tag">
+          <span>{{note.type}}</span>
+          <span *ngIf="note.page">총 {{note.page}}p</span>
+          <span *ngIf="!note.page">검수 중</span>
+        </div>
+        <div class="note-list-context-spec-tag" *ngIf="note.lec_id">
+          <span>{{note.lec_sc_id | schoolReplace}}</span>
+          <span>{{note.lec_name}}</span>
+          <span>{{note.lec_prof}}</span>
+          <span>{{note.lec_year}}-{{note.lec_term}}</span>
+        </div>
+        <div class="note-list-context-spec-tag" *ngIf="!note.lec_id">
+          <span>관련 강의 없음</span>
+        </div>
+        <div class="note-list-context-spec-hash">
+          <div *ngIf="note.hash_tag">
+            <img src="/assets/img/Tag.png" align="center">
+            <span *ngFor="let tag of note.hash_tag.split(',')">{{tag | noteHashtag}}</span>
+          </div>
+          <div class="note-list-context-spec-price" *ngIf="note.is_free==0"><img src="/assets/img/Coffeebean_color.png" align="center">{{note.price}}</div>
+          <div class="note-list-context-spec-price" *ngIf="note.is_free==1"><img src="/assets/img/Points_color.png" align="center">{{note.price_points}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="note-list-content-onhover" [style.opacity]="(note.state==0) ? '1' : ''" [style.cursor]="(note.state==0) ? 'default' : ''">
+      <button *ngIf="note.state!=0">상세 보기</button>
+      <span *ngIf="note.state==0">검수 중 입니다.<br>조금만 기다려 주세요.</span>
+    </div>
+  </div>
+</div>
+<button class="note-list-upload-btn" (click)="routingService.routing('note/upload')">공부노트 업로드</button>
+
+<div class="klue-logo">
+  <img src="/assets/img/KLUE_Logo_grey.png" *ngIf="!contentsLoading"/>
+  <img class="loading" src="/assets/img/Loading_icon.gif" *ngIf="contentsLoading"/>
+</div>

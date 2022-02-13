@@ -1,0 +1,86 @@
+.index-menubar-onsearch {
+  width: calc(100% - 120px);
+  position: absolute;
+  left: 120px;
+  z-index: 4;
+}
+
+.index-menubar-onsearch-category {
+  width: 178px;
+  height: 48px;
+  background-color: #fafafa;
+  border: solid 1px #e5e5e5;
+  float: left;
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+.index-menubar-onsearch-category > select {
+  width: 180px;
+  padding-left: 20px;
+  height: 48px;
+  border: 0;
+  background-color: #fafafa;
+  font-size: 14px;
+  font-family: "Nanum Square";
+  font-weight: 700;
+  color: #4a4a4a;
+}
+
+.index-menubar-onsearch-context {
+  float: left;
+  width: calc(100% - 182px);
+  background-color: #fafafa;
+  border: solid 1px #e5e5e5;
+}
+
+.index-menubar-onsearch-submit {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-top: 14px;
+  margin-left: 30px;
+  display: block;
+}
+
+.index-menubar-onsearch-input {
+  float: left;
+  display: block;
+  /* 수정 */
+  width: calc(100% - 120px);
+  height: 48px;
+  font-family: "Nanum Square";
+  font-size: 14px;
+  text-align: left;
+  color: #9b9b9b;
+  padding: 0;
+  border: 0;
+  margin-left: 10px;
+  background-color: #fafafa;
+}
+
+.index-menubar-onsearch-close {
+  width: 50px;
+  height: 48px;
+  cursor: pointer;
+  /* 수정
+    padding-top:7px;
+    padding-bottom:7px;
+    */
+  background-color: #fd884d;
+  float: right;
+  margin: 0;
+  text-align: center;
+  font-family: 'Nanum Square';
+  font-weight: 700;
+  font-size: 20px;
+  color: #fafafa;
+}
+
+/* 추가 */
+.index-menubar-onsearch-close > img {
+  width: 50px;
+  height: 50px;
+}

@@ -1,0 +1,28 @@
+.mypage-coffeebean-calendar-img{
+  width:15px;
+  height:15px;
+  margin:0 5px;
+}
+
+.mypage-select-container {
+  width: 50px;
+  height: 20px;
+  display: inline-block;
+  margin-left: 5px;
+  font-weight: 400;
+  border: solid 1px #e5e5e5;
+}
+
+.year{
+  width:70px;
+  margin-left:0;
+}
+
+.mypage-calendar-select{
+  color:#9b9b9b;
+  width:inherit;
+  height:inherit;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+}

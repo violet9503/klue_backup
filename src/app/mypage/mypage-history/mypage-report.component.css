@@ -1,0 +1,107 @@
+@media all and (max-width: 1279px) {
+  .alarm-wrap{
+    position: relative;
+    left:100px;
+  }
+}
+
+.alarm-wrap{
+  width: 800px;
+  margin: 50px auto;
+}
+
+.alarm-title{
+  font-size: 24px;
+  color: #4a4a4a;
+  margin: 50px 0 24px 5px;
+}
+
+.alarm-title > img{
+  width:30px;
+  height:30px;
+  margin-right:5px;
+}
+
+tr{
+  width:100%;
+  height:80px;
+}
+
+td{
+  font-size:14px;
+  border-bottom:1px solid #e5e5e5;
+}
+
+.alarm-main-profile{
+  width:60px;
+}
+
+.alarm-main-profile > img{
+  width:40px;
+  height:40px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.alarm-main-content{
+  width:550px;
+  color: #bbbbbb;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.alarm-main-time{
+  width:130px;
+  color: #9b9b9b;
+}
+
+.alarm-container{
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding:0 30px;
+  text-align: center;
+}
+
+.alarm-page-btn{
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  border: solid 1px #fd884d;
+  background-color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  color: #fd884d;
+  margin:0 5px;
+}
+
+.alarm-page-btn.selected{
+  width: 30px;
+  height: 30px;
+  background-color: #fd884d;
+  color:#ffffff;
+  margin:0 10px;
+}
+
+.alarm-page-move-btn{
+  color:#fd884d;
+  font-size:8px;
+  cursor: pointer;
+  border:0;
+  background: 0;
+}
+
+.alarm-btn-container{
+  padding: 25px 0;
+}
+
+.lecture-result-logo {
+  width: 120px;
+  margin: 50px auto;
+}
+
+.lecture-result-logo > img {
+  width: 120px;
+  height: 40px;
+}
+

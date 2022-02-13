@@ -1,0 +1,209 @@
+<div *ngIf="!isEmpty">
+  <div class="mypage-timetable-wrap">
+    <div class="mypage-timetable-title">
+      <img src="/assets/img/Bookmark.png" align="center">{{mypageService.tableName}}
+    </div>
+    <div class="mypage-timetable-container">
+      <table #timetable>
+        <tbody>
+        <tr>
+          <th>{{totalCredit}}<span>학점</span></th>
+          <th>월</th>
+          <th>화</th>
+          <th>수</th>
+          <th>목</th>
+          <th>금</th>
+        </tr>
+        <tr>
+          <td>1교시<span>09:00 ~<br>10:15</span></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+        </tr>
+        <tr>
+          <td>2교시<span>10:30 ~<br>11:45</span></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+        </tr>
+        <tr>
+          <td>3교시<span>12:00 ~<br>12:50</span></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+        </tr>
+        <tr>
+          <td>4교시<span>13:00 ~<br>13:50</span></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+        </tr>
+        <tr>
+          <td>5교시<span>14:00 ~<br>15:15</span></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+        </tr>
+        <tr>
+          <td>6교시<span>15:30 ~<br>16:45</span></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+        </tr>
+        <tr>
+          <td>7교시<span>17:00 ~<br>17:50</span></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+        </tr>
+        <tr>
+          <td>8교시<span>18:00 ~<br>18:50</span></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+          <td><div></div><div><p></p><p></p></div><div></div></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <button class="mypage-timetable-append-btn" *ngIf="!isSearch" (click)="searchTapControl(true)">강의 추가하기</button>
+  <div class="mypage-timetable-tap-container" *ngIf="isSearch" [@searchIn]="'in'" #tapContainer>
+    <div>
+      <ul class="mypage-timetable-check-tap">
+        <li [class.active]="iskeyword" (click)="changeTap(true)">키워드로 검색</li>
+        <li [class.active]="!iskeyword" (click)="changeTap(false)">필터링으로 찾기</li>
+        <li (click)="searchTapControl(false)">닫기</li>
+      </ul>
+    </div>
+    <div class="mypage-timetable-search-container">
+      <div class="mypage-timetable-search-input-container" *ngIf="iskeyword">
+        <div class="mypage-timetable-search-title">키워드 입력</div>
+        <hr>
+        <input class="mypage-timetable-search-input" type="text" placeholder="강의명, 교수명, 과목코드, 키워드로 검색" (keyup.enter)="lectureSearch(search.value)" #search>
+        <div class="mypage-timetable-checkbox-container">
+          <span class="mypage-timetable-checkbox-label" (click)="checkbox2.click()">현재 시간표와 겹치는 강의 제외</span><input type="checkbox" (click)="filterCheck($event)" #checkbox2>
+        </div>
+        <button class="mypage-timetable-search-btn" (click)="lectureSearch(search.value)" klueBtn="Search_white">
+          <img src="/assets/img/Search_color.png" align="center">검색하기
+        </button>
+      </div>
+      <div *ngIf="!iskeyword">
+        <div class="mypage-timetable-filter-container" #timeCondition>
+          <div>
+            <div class="mypage-timetable-filter-title">시간대 선택</div>
+            <hr class="mypage-timetable-filter-hr">
+            <div class="mypage-timetable-filter-name" (click)="timeSelect()">특정 시간대 선택하기
+              <span class="mypage-timetable-filter-arrow">></span>
+            </div>
+            <div class="mypage-timetable-filter-time-select" *ngIf="savedFilterTime.length == 0">선택하지 않음</div>
+            <div class="mypage-timetable-filter-time-select" *ngIf="savedFilterTime.length != 0">{{savedFilterTime | mypageTimefilter}}</div>
+            <div class="mypage-timetable-filter-name">포함 방법</div>
+            <div class="mypage-timetable-filter-condition">선택한 시간대'만' 포함<input type="radio" name="condition" value="only" checked>
+              <span>(ex. "월5" 선택 - "월5,수5" 결과에서 제외)</span>
+            </div>
+            <div class="mypage-timetable-filter-condition">선택한 시간대'를' 포함<input type="radio" name="condition" value="include">
+              <span>(ex. "월5" 선택 - "월5,수5" 결과에 포함)</span>
+            </div>
+          </div>
+        </div>
+        <div class="mypage-timetable-filter-container" #filter>
+          <div>
+            <div class="mypage-timetable-filter-title">강의 분류</div>
+            <hr class="mypage-timetable-filter-hr">
+            <div class="mypage-timetable-filter-checkbox-container">
+              <span class="mypage-timetable-filter-checkbox-label" (click)="checkbox1.click()">현재 시간표와 겹치는 강의 제외</span><input type="checkbox" (click)="filterCheck($event)" #checkbox1>
+            </div>
+            <div>
+              <span class="mypage-timetable-filter-select-name">구분</span>
+              <div class="mypage-timetable-filter-select-container">
+                <select class="mypage-timetable-filter-select" (change)="filterChange($event)" #select>
+                  <option value="" selected>전체</option>
+                  <option *ngFor="let item of savedType" [value]="item.category">{{item.category}}</option>
+                </select>
+              </div>
+            </div>
+            <div *ngIf="savedCategory">
+              <span class="mypage-timetable-filter-select-name">대분류</span>
+              <div class="mypage-timetable-filter-select-container">
+                <select class="mypage-timetable-filter-select" (change)="filterChange($event, select.value)">
+                  <option value="" selected>전체</option>
+                  <option *ngFor="let item of savedCategory" [value]="item.college">{{item.college}}</option>
+                </select>
+              </div>
+            </div>
+            <div *ngIf="savedCollege">
+              <span class="mypage-timetable-filter-select-name">소분류</span>
+              <div class="mypage-timetable-filter-select-container">
+                <select class="mypage-timetable-filter-select">
+                  <option value="" selected>전체</option>
+                  <option *ngFor="let item of savedCollege" [value]="item.department">{{item.department}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="mypage-timetable-filter-btn-container">
+              <button class="mypage-timetable-filter-btn" (click)="filterSearch()" klueBtn="Filtering_white">
+                <img src="/assets/img/Filtering_color.png" align="center">필터링하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mypage-timetable-search-result-container" (scroll)="onSearchScroll($event)"
+           (mouseenter)="bodyScrollControl(true)" (mouseleave)="bodyScrollControl(false)" [class.filter]="!iskeyword">
+        <table>
+          <tr>
+            <th width="25%">강의명</th>
+            <th width="10%">과목코드</th>
+            <th width="8%">이수구분</th>
+            <th width="6%">학점</th>
+            <th width="15%">교수명</th>
+            <th width="25%">강의시간</th>
+            <th width="11%">강의평가</th>
+          </tr>
+          <tr *ngFor="let lecture of lectureList" (mouseenter)="lectureTimeCheck(lecture, true)"
+              (mouseleave)="lectureTimeCheck(lecture, false)" (click)="lectureSelect(lecture)">
+            <td>{{lecture.name}}</td>
+            <td>{{lecture.code}}-{{lecture.class}}</td>
+            <td>{{lecture.type}}</td>
+            <td>{{lecture.credit}}</td>
+            <td>{{lecture.prof}}</td>
+            <td [innerHTML]="(lecture.time | mypageTimeLocation: lecture.location)"></td>
+            <td>
+              <img src="/assets/img/View_color.png">
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="mypage-timetable-filter-choice" *ngIf="isTimeFilter">
+    검색하고자 하는 강의 시간대를 모두 선택한 뒤, "완료" 버튼을 눌러주세요
+    <button class="mypage-timetable-filter-choice-btn" (click)="timeSelectComplete(true)" klueBtn>완료</button>
+    <button class="mypage-timetable-filter-choice-btn" (click)="timeSelectComplete(false)" klueBtn>취소</button>
+  </div>
+</div>
+<div class="mypage-timetable-wrap empty" *ngIf="isEmpty">
+  <div class="mypage-timetable-container">
+    <img src="/assets/img/Add_Timetable.png" class="mypage-timetable-empty">
+    <span class="mypage-timetable-empty-description">시간표를 추가해 주세요.</span>
+    <button class="mypage-timetable-add-btn" (click)="document.getElementById('timetable-append-link').click()" klueBtn>
+      시간표 추가하기
+    </button>
+  </div>
+</div>

@@ -1,0 +1,516 @@
+@media all and (max-width: 1279px) {
+  .mypage-timetable-wrap {
+    position: relative;
+    left: 100px;
+  }
+
+  .mypage-timetable-filter-container{
+    width: 210px;
+  }
+
+  .mypage-timetable-search-result-container.filter{
+    width: calc(100% - 420px - 40px);
+  }
+}
+
+@media all and (min-width: 1279px) {
+  .mypage-timetable-filter-container{
+    width: 16%;
+  }
+
+  .mypage-timetable-search-result-container{
+  }
+}
+
+
+.mypage-timetable-wrap {
+  width: 800px;
+  margin: 50px auto;
+}
+
+.mypage-timetable-title {
+  font-size: 24px;
+  color: #4a4a4a;
+  margin: 50px 0 24px 5px;
+}
+
+.mypage-timetable-title > img {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.mypage-timetable-container {
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.mypage-timetable-container table {
+  border-spacing: 5px;
+}
+
+.mypage-timetable-container th {
+  width: 140px;
+  height: 60px;
+  color: #9b9b9b;
+  padding: 0;
+}
+
+.mypage-timetable-container th > span {
+  font-size: 10px;
+}
+
+.mypage-timetable-container th:first-child {
+  width: 55px;
+  height: 60px;
+  color: #bbbbbb;
+}
+
+.mypage-timetable-container td {
+  width: 140px;
+  height: 120px;
+  border-radius: 1px;
+  background-color: #fafafa;
+  padding: 0;
+  border-spacing: 0;
+}
+
+.mypage-timetable-container tr > td:nth-child(6n+1) {
+  width: 55px;
+  height: 120px;
+  font-size: 14px;
+  text-align: center;
+  color: #9b9b9b;
+  background-color: #ffffff;
+}
+
+.mypage-timetable-container tr > td:nth-child(6n+1) > span {
+  display: block;
+  font-size: 10px;
+  margin-top: 5px;
+  color: #bbbbbb;
+}
+
+.mypage-timetable-container td > div > p {
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+  margin: 5px 10px;
+  width: 120px;
+}
+
+.mypage-timetable-container td > div:nth-child(odd) {
+  padding-top: 5px;
+  padding-right: 5px;
+  color: #ffffff;
+  font-size: 12px;
+  text-align: right;
+  height: 10px;
+}
+
+.mypage-timetable-container td > div:nth-child(even) {
+  height: 90px;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.mypage-timetable-append-btn {
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #fd884d;
+  border: 0;
+  color: #ffffff;
+  font-size: 14px;
+  position: fixed;
+  right: 60px;
+  bottom: 30px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.mypage-timetable-tap-container {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  min-width:1024px;
+}
+
+.mypage-timetable-check-tap {
+  padding-left: 20px;
+  margin-bottom: 0;
+  list-style: none;
+  display: table;
+}
+
+.mypage-timetable-check-tap > li {
+  float: left;
+  width: 180px;
+  height: 60px;
+  background-color: rgba(250, 250, 250, 0.8);
+  margin-right: 5px;
+  text-align: center;
+  line-height: 60px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 14px;
+  color: #bbbbbb;
+  box-shadow: 0 0 5px 0 rgba(155, 155, 155, 0.8);
+}
+
+.mypage-timetable-check-tap > li:last-child {
+  margin-bottom: -5px;
+  width: 100px;
+  height: 60px;
+  position: fixed;
+  right: 20px;
+}
+
+.mypage-timetable-check-tap > li.active {
+  background-color: #ffffff;
+  border-top: 5px solid #fd884d;
+  height: 55px;
+  color: #fd884d;
+  position: relative;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 -2px 5px 0 rgba(155, 155, 155, 0.8);
+}
+
+.mypage-timetable-search-container {
+  height: 330px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 5px 0 rgba(155, 155, 155, 0.8);
+  padding: 10px;
+  position: relative;
+  z-index: 1;
+  width:100%;
+  min-width: 1024px;
+}
+
+.mypage-timetable-search-input-container {
+  height: 100%;
+  width: 31%;
+  border-radius: 2px;
+  border: solid 1px #d7d7d7;
+  float: left;
+  text-align: center;
+}
+
+.mypage-timetable-search-result-container {
+  width: 66%;
+  height: 100%;
+  border-radius: 2px;
+  border: solid 1px #d7d7d7;
+  float: left;
+  margin-left: 10px;
+  overflow: scroll;
+}
+
+.mypage-timetable-search-title {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 18px;
+  color: #4a4a4a;
+  text-align: left;
+}
+
+hr {
+  width: 95%;
+  border: solid 1px #d7d7d7;
+  margin: 15px auto 20px;
+}
+
+.mypage-timetable-search-input {
+  width: 85%;
+  height: 40px;
+  border-radius: 25px;
+  border: solid 1px #fd884d;
+  font-size: 14px;
+  color: #4a4a4a;
+  padding-left: 20px;
+  background-image: url('/assets/img/Search_color.png');
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: calc(100% - 20px) 12px;
+}
+
+input::-webkit-input-placeholder {
+  color: #bbbbbb;
+}
+
+input:-ms-input-placeholder {
+  color: #bbbbbb;
+}
+
+input::placeholder {
+  color: #bbbbbb;
+}
+
+.mypage-timetable-checkbox-container {
+  text-align: right;
+  margin: 20px 40px;
+}
+
+.mypage-timetable-checkbox-label {
+  font-size: 11px;
+  color: #9b9b9b;
+  margin-right: 10px;
+}
+
+.mypage-timetable-search-btn {
+  width: 180px;
+  height: 40px;
+  border-radius: 25px;
+  border: solid 1px #fd884d;
+  color: #fd884d;
+  font-size: 12px;
+  background-color: #ffffff;
+  margin-top: 100px;
+}
+
+.mypage-timetable-search-btn > img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.mypage-timetable-search-result-container table {
+  text-align: center;
+  border-spacing: 0;
+  font-weight: 400;
+  width:100%;
+}
+
+.mypage-timetable-search-result-container th {
+  height: 40px;
+  background-color: #9b9b9b;
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.mypage-timetable-search-result-container td {
+  font-size: 13px;
+  color: #4a4a4a;
+  height: 50px;
+}
+
+.mypage-timetable-search-result-container tr:hover > td {
+  background-color: #bbbbbb;
+}
+
+.mypage-timetable-search-result-container td > img {
+  width: 20px;
+  height: 20px;
+}
+
+.mypage-timetable-search-result-container th:nth-child(5n+1), .mypage-timetable-search-result-container td:nth-child(5n+1) {
+  padding-left: 20px;
+  text-align: left;
+}
+
+.mypage-timetable-lecture-mouseover {
+  background-image: url('/assets/img/Timetable_Select.png');
+  background-repeat: no-repeat;
+  background-size: 140px 120px;
+  cursor: pointer;
+}
+
+.mypage-timetable-time-select {
+  background-image: url('/assets/img/Timetable_Time_Select.png');
+  cursor: pointer;
+}
+
+.mypage-timetable-time-notselect {
+  background-image: url('/assets/img/Timetable_Time_Select_White.png');
+  cursor: pointer;
+}
+
+.mypage-timetable-filter-container {
+  height: 330px;
+  border-radius: 2px;
+  border: solid 1px #d7d7d7;
+  padding: 0;
+  float: left;
+  box-sizing: border-box;
+}
+
+.mypage-timetable-filter-container>div{
+  width: 85%;
+  margin: 0 auto;
+}
+
+.mypage-timetable-filter-container:first-child {
+  margin-right: 10px;
+}
+
+.mypage-timetable-filter-checkbox-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.mypage-timetable-filter-title {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #4a4a4a;
+  text-align: left;
+}
+
+.mypage-timetable-filter-select-container {
+  width: 70%;
+  height: 30px;
+  font-weight: 400;
+  border-radius: 25px;
+  padding-left: 10px;
+  background-color: #f0f0f0;
+  margin-left: 15px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.mypage-timetable-filter-select {
+  font-size: 12px;
+  color: #4a4a4a;
+  width: 100%;
+  height: inherit;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+}
+
+.mypage-timetable-filter-hr {
+  width: 100%;
+  border: solid 1px #d7d7d7;
+  margin: 15px auto;
+}
+
+.mypage-timetable-filter-name {
+  font-size: 14px;
+  color: #4a4a4a;
+  margin-top: 30px;
+}
+
+.mypage-timetable-filter-arrow {
+  color: #fd884d;
+  font-size: 10px;
+  float: right;
+}
+
+.mypage-timetable-filter-checkbox-label {
+  font-size: 12px;
+  color: #9b9b9b;
+  margin-right: 5px;
+}
+
+.mypage-timetable-filter-select-name {
+  font-size: 12px;
+  color: #9b9b9b;
+  display: inline-block;
+  width:33px;
+}
+
+.mypage-timetable-filter-time-select {
+  height: 40px;
+  font-size: 10px;
+  color: #9b9b9b;
+  margin-top: 10px;
+}
+
+.mypage-timetable-filter-condition {
+  font-size: 12px;
+  color: #000000;
+  margin-top: 15px;
+}
+
+.mypage-timetable-filter-condition > span {
+  font-size: 10px;
+  margin-top: 5px;
+  display: block;
+  white-space: nowrap;
+}
+
+.mypage-timetable-filter-condition > input {
+  float: right;
+  width: 10px;
+  height: 10px;
+}
+
+.mypage-timetable-filter-btn-container{
+  position: absolute;
+  bottom: 30px;
+  width: 13.5%;
+  text-align: center;
+}
+
+.mypage-timetable-filter-btn {
+  width: 180px;
+  height: 40px;
+  border-radius: 25px;
+  border: solid 1px #fd884d;
+  color: #fd884d;
+  font-size: 12px;
+  background-color: #ffffff;
+}
+
+.mypage-timetable-filter-btn >img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.mypage-timetable-filter-choice {
+  width: 100%;
+  text-align: center;
+  height: 100px;
+  background-color: rgba(74, 74, 74, 0.8);
+  color: #ffffff;
+  font-size: 18px;
+  position: fixed;
+  bottom: 0;
+  line-height: 100px;
+  font-weight: 400;
+}
+
+.mypage-timetable-filter-choice-btn {
+  width: 150px;
+  height: 50px;
+  border-radius: 25px;
+  border: solid 1px #ffffff;
+  color: #ffffff;
+  font-size: 12px;
+  background-color: transparent;
+}
+
+.mypage-timetable-filter-choice-btn:first-child {
+  margin-left: 50px;
+  margin-right: 25px;
+}
+
+.mypage-timetable-empty {
+  width: 150px;
+  height: 150px;
+  margin: 50px auto 10px;
+}
+
+.mypage-timetable-empty-description {
+  font-size: 18px;
+  color: #9b9b9b;
+  display: block;
+}
+
+.mypage-timetable-add-btn {
+  width: 180px;
+  height: 40px;
+  border-radius: 20px;
+  border: solid 1px #fd884d;
+  color: #fd884d;
+  font-size: 14px;
+  background-color: transparent;
+  margin: 15px auto 50px;
+}
+
+.empty {
+  margin-bottom: 200px;
+}
+

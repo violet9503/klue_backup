@@ -1,0 +1,75 @@
+<sidemenu></sidemenu>
+<div class="lecture-write-container">
+  <div class="lecture-write-info">
+    <span>- 강의평가 1회 입력시 30 point 를 얻을 수 있습니다.</span>
+    <span>- 과도한 욕설 및 근거 없는 비난은 삼가주세요.</span>
+    <span>- 클루는 여러분의 성의 있는 강의평가를 기반으로 운영됩니다.</span>
+  </div>
+  <div class="lecture-write-eval-title"><img src="/assets/img/Bookmark.png" align="center">강의 총평</div>
+  <div class="lecture-write-total-eval">
+    <div class="lecture-write-total-eval-container">
+      <div class="lecture-write-category-name">총평</div>
+      <div class="lecture-main-rate-star" id="total_eval" (click)="clickPoint(0)">
+        <span class="lecture-main-rate-star-img"></span>
+        <span class="lecture-main-rate-star-img"></span>
+        <span class="lecture-main-rate-star-img"></span>
+        <span class="lecture-main-rate-star-img"></span>
+        <span class="lecture-main-rate-star-img"></span>
+      </div>
+      <span class="lecture-write-eval-name">{{totalContent}}</span>
+    </div>
+  </div>
+
+  <div class="lecture-write-eval-title"><img src="/assets/img/Bookmark.png" align="center">항목별 평가</div>
+  <div class="lecture-write-category-eval">
+    <div class="lecture-write-category-container">
+
+      <div class="lecture-write-category-slider-container">
+        <div class="lecture-write-category-name">출석체크</div>
+        <span class="lecture-eval-point-slider" id="slider01" (click)="clickPoint(1)">
+          <button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button>
+        </span>
+        <div class="lecture-write-eval-name">{{checkContent}}</div>
+      </div>
+
+      <div class="lecture-write-category-slider-container">
+        <div class="lecture-write-category-name">난이도</div>
+        <span class="lecture-eval-point-slider" id="slider02" (click)="clickPoint(2)">
+          <button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button>
+        </span>
+        <div class="lecture-write-eval-name">{{diffContent}}</div>
+      </div>
+
+      <div class="lecture-write-category-slider-container">
+        <span class="lecture-write-category-name">학습량</span>
+        <span class="lecture-eval-point-slider" id="slider03" (click)="clickPoint(3)">
+          <button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button>
+        </span>
+        <div class="lecture-write-eval-name">{{studyContent}}</div>
+      </div>
+
+      <div class="lecture-write-category-slider-container">
+        <div class="lecture-write-category-name">학점</div>
+        <span class="lecture-eval-point-slider" id="slider04" (click)="clickPoint(4)">
+          <button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button>
+        </span>
+        <div class="lecture-write-eval-name">{{gradeContent}}</div>
+      </div>
+
+      <div class="lecture-write-category-slider-container">
+        <div class="lecture-write-category-name">성취감</div>
+        <span class="lecture-eval-point-slider" id="slider05" (click)="clickPoint(5)">
+          <button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button><button class="lecture-eval-point-bar"></button>
+        </span>
+        <div class="lecture-write-eval-name">{{achieveContent}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="lecture-write-eval-title"><img src="/assets/img/Bookmark.png" align="center">평가 내용</div>
+  <div class="lecture-write-eval-content">
+    <textarea class="lecture-write-eval-content-typing" placeholder="평가 내용을 입력하세요. 최대 2000자" maxlength="2000" (keyup)="contentTyping($event)" #evalTyping></textarea>
+    <div class="lecture-write-typing-length">{{evalContent.length}}/2000</div>
+    <button class="lecture-write-register-btn" (click)="register()" klueBtn>등록하기</button>
+  </div>
+  <div class="lecture-result-logo"><img src="/assets/img/KLUE_Logo_grey.png"/></div>
+</div>

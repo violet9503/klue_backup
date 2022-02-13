@@ -1,0 +1,33 @@
+export class Note {
+  block: number;
+  comments_count: number;
+  content: string;
+  created_at: string;
+  download_count: number;
+  file_name: string;
+  file_path: string;
+  hash_tag: string;
+  hit: number;
+  id: number;
+  is_free: number;
+  lec_code: string;
+  lec_id: number;
+  lec_name: string;
+  lec_prof: string;
+  lec_sc_id: string;
+  lec_term: string;
+  lec_year: string;
+  like_count: number;
+  name: string;
+  page: number;
+  price: number;
+  price_points: number;
+  profile: string;
+  state: number;
+  thumbnail_name: string;
+  title: string;
+  type: string;
+  user_id: number;
+  write_status: number;
+  like_status: number;
+}

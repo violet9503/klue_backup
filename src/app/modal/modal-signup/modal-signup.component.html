@@ -1,0 +1,60 @@
+<div *ngIf="!isNext">
+    <div class="modal-content-title">
+        <span>회원가입</span>
+    </div>
+
+    <input type="text" class="modal-signup-input" [ngModel]="user.id" (ngModelChange)="idCheck($event)" placeholder="아이디"/>
+    <div class="modal-signup-input-checker" *ngIf="!isWrong_id">{{idConditionContent}}</div>
+    <div class="modal-signup-input-checker checker-wrong" *ngIf="isWrong_id">
+        <span>{{idConditionWrong}}</span>
+    </div>
+
+    <input type="password" class="modal-signup-input" [ngModel]="user.password" (ngModelChange)="pwCheck($event)" placeholder="비밀번호"/>
+    <div class="modal-signup-input-checker" *ngIf="!isWrong_pw">{{pwConditionContent}}</div>
+    <div class="modal-signup-input-checker checker-wrong" *ngIf="isWrong_pw">
+        <span>{{pwConditionWrong}}</span>
+    </div>
+
+    <input type="password" class="modal-signup-input" placeholder="비밀번호 확인" #pwConfirm/>
+    <div class="modal-signup-input-checker" *ngIf="!isWrong_confirm">한번 더 입력해주세요</div>
+    <div class="modal-signup-input-checker checker-wrong" *ngIf="isWrong_confirm">
+        <span>* 비밀번호가 일치하지 않습니다.</span>
+    </div>
+
+    <button class="modal-signup-submit" (click)="firstCheck(pwConfirm.value)" klueBtn>다음</button>
+</div>
+
+
+<div *ngIf="isNext">
+    <div class="modal-content-title">
+        <span>회원가입</span>
+    </div>
+    <div class="modal-signup-input select">
+        <select class="modal-signup-select" #sc_id name="소속 학교" (change)="sc_idChange($event)">
+            <option value="">소속 학교</option>
+            <option value="ku">고려대학교 (안암 캠퍼스)</option>
+            <option value="ku_sejong">고려대학교 (세종 캠퍼스)</option>
+        </select>
+    </div>
+    <div class="modal-signup-input-checker" [class.checker-wrong]="isWrong_sc">소속 학교를 선택해주세요.</div>
+
+    <div class="modal-signup-email">
+      <input type="text" class="modal-signup-input email" placeholder="학교 이메일" #sc_email/><span>{{schoolEmail}}</span>
+    </div>
+    <div class="modal-signup-input-checker" *ngIf="!isWrong_email">소속 학교 인증 및 개인정보 찾기에 이용됩니다.</div>
+    <div class="modal-signup-input-checker checker-wrong" *ngIf="isWrong_email">{{emailConditionWrong}}</div>
+
+    <hr style="width:250px;height: 1px;background-color:#e5e5e5;border:0; margin:15px auto;">
+
+    <input type="text" class="modal-signup-input" [ngModel]="user.name" (keyup)="nameCheck(input.value)" placeholder="닉네임" #input/>
+    <div class="modal-signup-input-checker" *ngIf="!isWrong_name">{{nameConditionContent}}</div>
+    <div class="modal-signup-input-checker checker-wrong" *ngIf="isWrong_name">
+        <span>{{nameConditionWrong}}</span>
+    </div>
+
+    <div class="modal-signup-notice" style="margin-top:30px;">동의 및 회원가입을 누르면 <span>클루이용약관</span>에 동의하게 됩니다</div>
+
+    <button class="modal-signup-submit" (click)="secondCheck(sc_id.value, sc_email.value)" klueBtn>동의 및 회원가입</button>
+</div>
+
+<modal-footer [state]="'signup'" (snsClick)="snsCheck()" *ngIf="!isNext"></modal-footer>

@@ -1,0 +1,11 @@
+<div class="modal-content-title">
+    <span>로그인</span>
+</div>
+
+<input type="text" class="modal-login-input" placeholder="아이디" #id (keyup.enter)="login(id.value, password.value)"/>
+<input type="password" class="modal-login-input" placeholder="비밀번호" #password [style.margin-bottom]="notAgree ? '0px' : '23px'" (keyup.enter)="login(id.value, password.value)"/>
+<div class="modal-login-input-checker" *ngIf="notAgree">{{loginConditionWrong}}</div>
+<button class="modal-login-submit" (click)="login(id.value, password.value)" klueBtn>로그인</button>
+<span class="modal-login-help" (click)="sharedService.stateChange('loss');">아이디 혹은 비밀번호를 잊으셨나요?</span>
+
+<modal-footer [state]="'login'" (snsClick)="snsCheck()"></modal-footer>

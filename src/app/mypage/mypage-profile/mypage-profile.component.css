@@ -1,0 +1,379 @@
+.mypage-profile-top {
+  display: table;
+  margin: 0 auto;
+  margin-top: 50px;
+  height:250px;
+}
+
+.mypage-profile-top > div{
+  display: inline-block;
+}
+
+.mypage-profile-top-aligner{
+  width:150px;
+  height:100px;
+  margin-right: 17px;
+}
+
+.mypage-profile-top-info-img {
+  height: 200px;
+}
+
+.mypage-profile-top-info-userimg {
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+}
+
+.mypage-profile-top-info-username {
+  display: block;
+  margin-top: 15px;
+  font-size: 20px;
+  color: #4a4a4a;
+  text-align: center;
+}
+
+.mypage-profile-top-info-changeimg{
+  width: 35px;
+  height: 35px;
+  position: relative;
+  top: -40px;
+  left: 155px;
+  border-radius: 20px;
+  background-color: #fd884d;
+  border: solid 1px #ffffff;
+  cursor: pointer;
+}
+
+.mypage-profile-top-info-changeimg > img{
+  width: 25px;
+  height: 25px;
+  margin:5px;
+}
+
+.mypage-profile-top-intro {
+  width: 150px;
+  height: 100px;
+  background-color: #fafafa;
+  border: solid 1px #e5e5e5;
+  font-size: 14px;
+  text-align: center;
+  color: #4a4a4a;
+  margin-left: 15px;
+  position: relative;
+  top: -20px;
+}
+
+.mypage-profile-top-intro > span{
+  cursor: pointer;
+}
+
+.mypage-profile-top-intro-triangle {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #f9f9f9;
+  position: relative;
+  top: 40px;
+  left: -5px;
+}
+
+.mypage-profile-summary {
+  width: 100%;
+  min-height: 200px;
+  box-sizing: border-box;
+  border: solid 1px #e5e5e5;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.mypage-profile-summary-aligner {
+  display: table;
+  margin: 0 auto;
+  min-height: 200px;
+}
+
+.mypage-profile-summary-aligner > div {
+  width: 250px;
+  margin-top: 50px;
+  margin-right: 25px;
+  display: inline-block;
+  text-align: center;
+}
+
+.mypage-profile-summary-aligner > div:last-child {
+  margin-right: 0;
+}
+
+.mypage-profile-summary-auth > img {
+  width: 60px;
+  height:60px;
+}
+
+.mypage-profile-summary-auth > span {
+  margin-top: 25px;
+  display: block;
+  font-size: 18px;
+  color: #4a4a4a;
+}
+
+.mypage-profile-summary-auth > span > span {
+  font-size: 12px;
+  color: #fd884d;
+}
+
+
+.mypage-profile-summary-permission > span {
+  margin-top: 25px;
+  font-size: 18px;
+  color: #4a4a4a;
+  display: block;
+}
+
+.mypage-profile-summary-permission > img {
+  width: 50px;
+  height:50px;
+}
+
+.mypage-profile-summary-permission > span > img{
+  width: 20px;
+  height:20px;
+  margin-left:5px;
+}
+
+.mypage-profile-summary-point {
+  margin-right:0;
+}
+
+.mypage-profile-summary-point > img {
+  width: 50px;
+  height: 50px;
+}
+
+.mypage-profile-summary-point > span {
+  display: block;
+  margin-top: 30px;
+  font-size: 18px;
+  color: #4a4a4a;
+}
+
+.mypage-profile-summary-point > span > span {
+  font-size: 12px;
+  color: #fd884d;
+  margin-left:5px;
+}
+
+.mypage-profile-detail {
+  width: 800px;
+  height:425px;
+  margin: 50px auto 0;
+}
+
+.mypage-profile-detail > div {
+  float: left;
+}
+
+.mypage-profile-info {
+  box-sizing: border-box;
+  width: 250px;
+  min-height: 425px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  border: solid 1px #e5e5e5;
+  text-align: center;
+  margin-right:25px;
+}
+
+.mypage-profile-info-title {
+  display: block;
+  margin-top: 20px;
+  margin-left:25px;
+  font-size: 12px;
+  color: #bbbbbb;
+  text-align: left;
+}
+
+.mypage-profile-info-img{
+  margin: 50px auto 40px;
+  width: 70px;
+}
+
+.mypage-profile-info-img > img{
+  width: 70px;
+  height: 70px;
+}
+
+.mypage-profile-info-smallimg{
+  margin-top: 15px;
+  overflow: auto;
+}
+
+.mypage-profile-info-smallimg > img{
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.mypage-profile-info-smallimg > img:last-child{
+  margin-right:0;
+}
+
+.mypage-profile-info-auth-container{
+  margin: 0 auto 50px;
+  display: table;
+}
+
+.mypage-profile-info-auth-container > div{
+  display: table;
+  margin-bottom: 20px;
+}
+
+.mypage-profile-info-auth-container > div:last-child{
+  margin-bottom: 0;
+}
+
+.mypage-profile-info-name{
+  width: 47px;
+  font-size: 12px;
+  color: #bbbbbb;
+  margin-right:15px;
+  float: left;
+  text-align: left;
+}
+
+.mypage-profile-info-description{
+  font-size: 12px;
+  color: #4a4a4a;
+  float: left;
+}
+
+.mypage-profile-info-description>img{
+  width:15px;
+  height:15px;
+  margin-right:5px;
+}
+
+.mypage-profile-rectangle {
+  width: 250px;
+  height: 200px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-right: 25px;
+  margin-bottom:25px;
+  text-align: center;
+}
+
+.mypage-profile-rectangle:nth-child(odd){
+  margin-right:0;
+}
+
+.mypage-profile-rectangle-img {
+  display: block;
+  width: 150px;
+  height: 50px;
+  margin: 25px auto 30px;
+  text-align: center;
+}
+
+.mypage-profile-rectangle-img > img {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.mypage-profile-rectangle-img > span {
+  margin-left: 15px;
+  font-size: 24px;
+  text-align: center;
+  color: #4a4a4a;
+}
+
+.mypage-profile-rectangle-description {
+  font-size: 12px;
+  text-align: center;
+  color: #9b9b9b;
+  display: block;
+}
+
+hr{
+  width: 75%;
+  border: solid 1px #e5e5e5;
+  margin: 15px auto;
+}
+
+.mypage-profile-color-grey{
+  color: #bbbbbb;
+  cursor: default!important;
+}
+
+.mypage-profile-info-link{
+  font-size: 12px;
+  color: #fd884d;
+  cursor: pointer;
+}
+
+.fade-layer{
+  opacity: 0.95;
+  border-radius: 5px;
+  background-color: #4a4a4a;
+}
+
+.fade-layer > span{
+  font-size: 14px;
+  color: #ffffff;
+  display: block;
+}
+
+.fade-layer > img{
+  width:60px;
+  height:60px;
+  margin-top: 25%;
+}
+
+
+.modal-wrap{
+  width:100%;
+  height:100%;
+  position: fixed;
+  overflow:hidden;
+  z-index: 4;
+  background-color: rgba(74, 74, 74, 0.9);
+  left:0;
+  top:0;
+  display:table;
+  min-width: 1024px;
+}
+.modal-row{
+  display:table-cell; vertical-align: middle;
+}
+.modal-content{
+  width:600px;
+  padding:30px 0;
+  background-color: #fafafa;
+  border-radius: 5px;
+  border: solid 1px #979797;
+  margin:0 auto;
+  text-align: center;
+}
+
+.modal-content>span{
+  font-size: 16px;
+  line-height: 1.29;
+  color: #9b9b9b;
+  display: block;
+  margin-bottom:20px;
+}
+
+.modal-btn{
+  width: 265px;
+  height: 45px;
+  border-radius: 25px;
+  border: solid 1px #fd884d;
+  color: #fd884d;
+  font-size: 12px;
+  background-color: #ffffff;
+  margin-top:30px;
+}

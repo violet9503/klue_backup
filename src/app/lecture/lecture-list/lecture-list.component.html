@@ -1,0 +1,60 @@
+<div class="lecture-search-result-container" *ngIf="lectures">
+  <div class="lecture-search-result-title"><img src="/assets/img/Bookmark.png" align="center"> 강의 검색 결과 (<span>{{totalCount}}</span>)</div>
+  <div class="lecture-search-order">
+    정렬 방법
+    <div>
+      <select (change)="changeOrder($event)">
+        <option value="year_term" selected>학기순</option>
+        <option value="star_total">평점순</option>
+        <option value="eval_count">갯수순</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="lecture-search-result" *ngFor="let lecture of lectures">
+    <div class="lecture-search-result-left">
+
+      <svg id="lecture_{{lecture.id}}">
+      </svg>
+    </div>
+    <div class="lecture-search-result-right">
+      <div class="lecture-search-result-right-row">
+
+        <div class="lecture-search-result-name"><span>{{ lecture.name | lectureSlice: 20}}</span>
+          <span class="lecture-search-result-code">{{lecture.code}}</span>
+          <span class="lecture-search-result-rate" *ngIf="evalAuth"><span class="lecture-search-result-rate-star">★</span> {{lecture.star_total.toFixed(2)}}</span>
+        </div>
+
+        <div class="lecture-search-result-professor">
+          <span>{{lecture.prof | lectureSlice: 30}}</span>
+          <span class="lecture-search-result-subfix">교수님</span>
+        </div>
+
+        <div class="lecture-search-result-info">
+          {{lecture.year}}-{{lecture.term}} | {{lecture.type}} | {{lecture.credit}}학점 | {{(lecture.time | lectureTimelocation: lecture.location).split(",").join("") | lectureSlice: 45}}
+        </div>
+      </div>
+      <div class="lecture-search-result-right-row">
+        <button class="lecture-search-result-btn" (click)="lectureEval(lecture.id)" [disabled]="!evalAuth" [class.not-login]="!evalAuth" klueBtn="View_white">
+          <img class="lecture-search-btn-img" align="center" [src]="evalAuth ? '/assets/img/View_color.png' : '/assets/img/View_grey.png'"/>
+          {{lectureEvalViewContent}}
+          <span *ngIf="evalAuth">{{lecture.eval_count | lectureParentheses}}</span>
+        </button>
+        <button class="lecture-search-result-btn" (click)="lectureWrite(lecture.id)"[disabled]="!isLoggedIn" [class.not-login]="!isLoggedIn" klueBtn="Evaluation_Write_white">
+          <img class="lecture-search-btn-img" align="center" [src]="isLoggedIn ? '/assets/img/Evaluation_Write.png' : '/assets/img/Evaluation_Write_grey.png'"/>
+          {{lectureEvalWriteContent}}
+        </button>
+      </div>
+    </div>
+
+  </div>
+  <div class="klue-logo"><img src="/assets/img/KLUE_Logo_grey.png" *ngIf="!lectures_load"/><img class="loading" src="/assets/img/Loading_icon.gif" *ngIf="lectures_load"/></div>
+</div>
+
+<div class="lecture-search-no-result-container" *ngIf="empty">
+  <div class="lecture-search-result-title"><img src="/assets/img/Bookmark.png" align="center">강의 검색 결과 (<span>0</span>)</div>
+  <img src="/assets/img/Page_NoResult.png">
+  <div class="lecture-search-no-result-description">검색 결과가 없습니다.</div>
+  <div class="klue-logo"><img src="/assets/img/KLUE_Logo_grey.png"/></div>
+</div>
+<img src="/assets/img/ScrollTop.png" scrollTop>

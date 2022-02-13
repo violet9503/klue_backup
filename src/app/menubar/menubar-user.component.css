@@ -1,0 +1,237 @@
+.index-menubar-button {
+  width: 40px;
+  height: 40px;
+  margin-top: -10px;
+  display: inline-block;
+  position: relative;
+}
+
+.index-menubar-button > img {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  vertical-align: middle;
+  border-radius: 15px;
+}
+
+/* [sdc] start of scrolldown style */
+.index-menubar-scrolldown {
+  width: 400px;
+  position: absolute;
+  left: -280px;
+  top: 50px;
+  display: none;
+}
+
+.index-menubar-triangle {
+  left: 295px;
+  top: -7px;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+}
+
+.index-menubar-inscroll {
+  width: 398px;
+  height: 50px;
+  border-collapse: collapse;
+  border: solid 1px #e5e5e5;
+  background-color: #fafafa;
+}
+
+.index-menubar-inscroll.tp {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.index-menubar-inscroll.lp {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.index-inscroll-middle {
+  width: 55px;
+  height: 20px;
+  margin: 0 auto;
+  margin-top: 25px;
+  line-height: 0;
+  font-size: 14px;
+  text-align: center;
+  color: #4a4a4a;
+}
+
+.index-inscroll-middle.lp {
+  margin-top: 17px;
+  color: #9b9b9b;
+}
+
+.index-inscroll-left {
+  width: 63px;
+  height: 50px;
+  display: inline;
+  float: left;
+}
+
+.index-inscroll-right {
+  width: 334px;
+  height: 50px;
+  display: inline;
+  float: right;
+}
+
+.index-inscroll-profile {
+  width: 30px;
+  height: 30px;
+  margin-left: 16px;
+  margin-top: 10px;
+  border-radius: 15px;
+}
+
+.index-inscroll-title {
+  font-size: 12px;
+  text-align: left;
+  color: #4a4a4a;
+  display: block;
+  line-height: 1.33;
+  height: 32px;
+  margin-top: 9px;
+  font-weight:200;
+}
+
+/* [sdc] End of Scrolldown style */
+.index-menubar-personal-scrolldown {
+  width: 240px;
+  position: absolute;
+  left: -180px;
+  top: 50px;
+  display: none;
+}
+
+.index-menubar-personal-triangle {
+  left: 195px;
+  top: -7px;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fafafa;
+  z-index: 4;
+}
+
+.index-menubar-personal-inscroll {
+  width: 238px;
+  height: 50px;
+  border-collapse: collapse;
+  border-left: solid 1px #e5e5e5;
+  border-right: solid 1px #e5e5e5;
+  background-color: #fafafa;
+}
+
+.index-menubar-personal-inscroll.tp {
+  border-top: solid 1px #e5e5e5;
+  border-bottom: solid 1px #e5e5e5;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 80px;
+}
+
+.index-menubar-personal-inscroll.lp {
+  border-top: solid 1px #e5e5e5;
+  border-bottom: solid 1px #e5e5e5;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.index-inscroll-personal-middle {
+  height: 50px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.index-inscroll-personal-middle:hover {
+  background-color: #eaeaea;
+}
+
+.index-inscroll-personal-icon {
+  height: 25px;
+  width: 25px;
+  margin-top: 13px;
+}
+
+.index-inscroll-personal-iconmenu {
+  height: 16px;
+  font-size: 14px;
+  color: #4a4a4a;
+  vertical-align: super;
+  margin-left: 17px;
+}
+
+.index-inscroll-personal-iconmenu.lp {
+  color: #9b9b9b;
+}
+
+.index-inscroll-personal-left {
+  width: 50%;
+  display: inline;
+  float: left;
+}
+
+.index-inscroll-personal-left.tp {
+  height: 80px;
+}
+
+.index-inscroll-personal-right {
+  width: 40%;
+  float: left;
+  margin-right: 10%;
+}
+
+.index-inscroll-personal-right.tp {
+  height: 80px;
+}
+
+.index-inscroll-personal-profile {
+  width: 50px;
+  height: 50px;
+  margin-left: 55px;
+  margin-top: 15px;
+  border-radius: 25px;
+}
+
+.index-inscroll-personal-title {
+  font-size: 14px;
+  text-align: center;
+  color: #4a4a4a;
+  line-height: 14px;
+  margin-top: 25px;
+}
+
+.index-inscroll-personal-content {
+  font-size: 10px;
+  text-align: center;
+  color: #4a4a4a;
+  line-height: 10px;
+  margin: 7px auto;
+}
+
+.mlr20 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.index-menubar-detail {
+  width: 100px;
+  height: 22px;
+  font-size: 14px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 0px;
+  display: inline-block;
+  line-height: 0px;
+}

@@ -1,0 +1,14 @@
+<div class="modal-content-title">
+    <span>닉네임 변경</span>
+</div>
+
+<p class="modal-nickname-notice">클루 리뉴얼 후 처음 로그인 하셨네요!<br>클루에서 사용할 닉네임을 정해주세요.</p>
+<p class="modal-nickname-warn">*설정한 닉네임은 이후 변경하실 수 없습니다</p>
+
+<input type='text' class="modal-nickname-input" [ngModel]="userName" (keyup)="nameCheck(input.value)" placeholder="닉네임" #input>
+<div class="modal-nickname-input-checker" *ngIf="!isWrong_name">{{nameConditionContent}}</div>
+<div class="modal-nickname-input-checker checker-wrong" *ngIf="isWrong_name">
+  <span>{{nameConditionWrong}}</span>
+</div>
+
+<button class="modal-nickname-submit" (click)="clickSubmit()" klueBtn>닉네임 설정</button>

@@ -1,0 +1,19 @@
+<div class="index-menubar">
+    <div class="index-menubar-left">
+      <img class="index-menubar-logo" src="/assets/img/KLUE_Logo_white.png" gotoIndex/>
+    </div>
+    <menubar-search *ngIf="isSearch" (close)="clickSearch(false)"></menubar-search>
+    <div class="index-menubar-search" *ngIf="!isSearch"><span class="index-menubar-deatil"><img class="index-menubar-searchimg" src="/assets/img/Search_white.png" (click)="clickSearch(true)"/></span></div>
+    <ul class="index-menubar-right">
+        <li class="index-menubar-detail" (click)="router.navigate(['lecture/latest'])">강의평가<div *ngIf="isLecture"><img class="index-menubar-triangle"></div></li>
+        <li class="index-menubar-detail"  (click)="router.navigate(['note/latest'])">공부노트<div *ngIf="isNote"><img class="index-menubar-triangle"></div></li>
+      <!--
+        <li class="index-menubar-detail">튜터링</li>
+        <li class="index-menubar-detail">질의응답</li>
+        -->
+        <menubar-guest *ngIf="isGuest"></menubar-guest>
+        <menubar-user *ngIf="isUser"></menubar-user>
+    </ul>
+</div>
+
+<div class="modal-wrap" *ngIf="isSearch" (click)="clickSearch(false)"></div>

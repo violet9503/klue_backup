@@ -1,0 +1,124 @@
+@media all and (max-width: 1279px) {
+  .mypage-account-container{
+    position: relative;
+    left:100px;
+  }
+}
+
+.mypage-account-container{
+  width: 800px;
+  margin: 50px auto;
+}
+
+.mypage-account-contents-title{
+  font-size: 24px;
+  color: #4a4a4a;
+  margin: 50px 0 24px 5px;
+}
+
+.mypage-account-contents-title > img{
+  width:30px;
+  height:30px;
+  margin-right:5px;
+}
+
+.mypage-account-contents-container{
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 30px 50px;
+}
+
+
+.mypage-account-contents-container:last-child{
+  padding: 30px 0;
+}
+
+.mypage-account-contents-container:last-child > div{
+  margin: 0 50px 20px;
+}
+
+.mypage-account-contents-line{
+  vertical-align: middle;
+  line-height: 30px;
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+.mypage-account-contents-line>span{
+  font-weight:400;
+}
+
+.mypage-account-contents-name{
+  display: inline-block;
+  width: 70px;
+  font-size: 14px;
+  text-align: left;
+  color: #9b9b9b;
+  margin-right:60px;
+}
+
+.mypage-account-contents-name:last-child{
+  margin-left:50px;
+}
+
+.mypage-account-contents-name:last-child:hover{
+  color:#4a4a4a;
+}
+
+.mypage-account-contents-btn{
+  width: 150px;
+  height: 30px;
+  border-radius: 20px;
+  border: solid 1px #fd884d;
+  float:right;
+  background-color: #ffffff;
+  padding: 8px 0;
+  text-align: center;
+  font-size: 12px;
+  color: #fd884d;
+}
+
+.mypage-account-contents-btn:disabled{
+  color: #bbbbbb;
+  border: solid 1px #bbbbbb;
+}
+
+.google{
+  border: solid 1px #d94133;
+  color: #d94133;
+}
+
+.facebook{
+  border: solid 1px #3c5a96;
+  color: #3c5a96;
+}
+
+.facebook:hover{
+  color: #ffffff;
+  background-color: #3c5a96;
+  cursor: pointer;
+}
+
+.google:hover{
+  color: #ffffff;
+  background-color: #d94133;
+  cursor: pointer;
+}
+
+.logged-google{
+  color: #ffffff;
+  border: solid 1px #d94133;
+  background-color: #d94133;
+}
+
+.logged-facebook{
+  color: #ffffff;
+  border: solid 1px #3c5a96;
+  background-color: #3c5a96;
+}
+
+hr {
+  width: 95%;
+  margin: 24px auto;
+  border: solid 1px #e5e5e5;
+}

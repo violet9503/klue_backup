@@ -1,0 +1,217 @@
+@media all and (max-width: 1279px) {
+  .mypage-coffeebean-wrap {
+    position: relative;
+    left: 100px;
+  }
+}
+
+.mypage-coffeebean-wrap {
+  width: 800px;
+  margin: 50px auto;
+}
+
+.mypage-coffeebean-title {
+  font-size: 24px;
+  color: #4a4a4a;
+  margin: 50px 0 24px 5px;
+}
+
+.mypage-coffeebean-title > img {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.mypage-coffeebean-container {
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.mypage-coffeebean-info {
+  display: table;
+  margin: 0 auto;
+  padding: 30px 50px;
+}
+
+.mypage-coffeebean-img {
+  width: 50px;
+  height: 50px;
+}
+
+.mypage-coffeebean-name {
+  display: inline-block;
+  font-size: 14px;
+  text-align: left;
+  color: #9b9b9b;
+  margin-right: 35px;
+}
+
+.mypage-coffeebean-description {
+  font-size: 20px;
+  color: #bbbbbb;
+  margin: 0 30px;
+  vertical-align: middle;
+}
+
+.mypage-coffeebean-quantity {
+  font-size: 24px;
+  text-align: center;
+  color: #4a4a4a;
+  vertical-align: middle;
+}
+
+.mypage-coffeebean-input {
+  width: 120px;
+  height: 30px;
+  border-radius: 25px;
+  background-color: #f0f0f0;
+  margin-right: 30px;
+  border: 0;
+  padding: 0 15px;
+}
+
+.mypage-coffeebean-charge-btn {
+  width: 140px;
+  height: 40px;
+  border-radius: 20px;
+  border: solid 1px #fd884d;
+  background-color: #ffffff;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #fd884d;
+  margin-left: 50px;
+}
+
+.mypage-coffeebean-term-btn {
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  border: solid 1px #fd884d;
+  padding: 8px 0;
+  text-align: center;
+  font-size: 12px;
+  color: #fd884d;
+  margin-right: 15px;
+}
+
+.mypage-coffeebean-check-btn {
+  width: 150px;
+  height: 30px;
+  border-radius: 25px;
+  border: solid 1px #fd884d;
+  background-color: #ffffff;
+  padding: 7px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #fd884d;
+}
+
+.selected {
+  background-color: #fd884d;
+  color: #ffffff;
+}
+
+.mypage-coffeebean-check-tap {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  display: table;
+}
+
+.mypage-coffeebean-check-tap > li {
+  float: left;
+  margin-bottom: -5px;
+  width: 180px;
+  height: 55px;
+  background-color: #fafafa;
+  margin-right: 5px;
+  text-align: center;
+  line-height: 55px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 14px;
+  color: #bbbbbb;
+}
+
+.mypage-coffeebean-check-container {
+  padding: 25px 0 20px 50px;
+}
+
+.mypage-coffeebean-check-container > div:nth-child(odd) {
+  padding-left: 120px;
+}
+
+.mypage-coffeebean-check-container > div:last-child {
+  font-size: 13px;
+  color: #9b9b9b;
+}
+
+.mypage-coffeebean-check-btn-container {
+  text-align: center;
+  padding: 25px;
+}
+
+.mypage-coffeebean-check-tap > li.active {
+  background-color: #ffffff;
+  border-top: 5px solid #fd884d;
+  color: #fd884d;
+}
+
+hr {
+  width: 95%;
+  border: solid 1px #e5e5e5;
+  margin: 0 auto;
+}
+
+table {
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+th {
+  font-size: 14px;
+  color: #bbbbbb;
+  border-bottom: solid 1px #e5e5e5;
+  height: 80px;
+}
+
+tr {
+  height: 60px;
+}
+
+td {
+  color: #4a4a4a;
+  text-align: center;
+}
+
+tr > td:nth-child(1) {
+  color: #9b9b9b;
+}
+
+tr > td:nth-child(3) {
+  color: #fd884d;
+}
+
+tr:nth-last-child(2) > td {
+  border-bottom: solid 1px #e5e5e5;
+}
+
+.mypage-coffeebean-page-btn {
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  border: solid 1px #fd884d;
+  background-color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  color: #fd884d;
+}
+
+.mypage-coffeebean-page-btn.selected {
+  width: 30px;
+  height: 30px;
+  background-color: #fd884d;
+  color: #ffffff;
+}

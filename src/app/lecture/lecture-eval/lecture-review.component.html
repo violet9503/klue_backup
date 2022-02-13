@@ -1,0 +1,15 @@
+<div class="lecture-review-container">
+  <div class="lecture-review-count">댓글 <span>{{evaluation.comments_count}}</span> </div>
+  <div class="lecture-review-each-container" *ngFor="let comment of comments">
+    <img [src]="comment.profile">
+    <div class="lecture-review-content">
+      <div class="lecture-review-info"> {{comment.name}} <span>{{comment.created_at}}</span> <span style="float:right;cursor: pointer;" *ngIf="(comment.write_status==1)" (click)="deleteReview(comment.id)">X</span></div>
+      <div class="lecture-review-comment">{{comment.content}}</div>
+    </div>
+  </div>
+
+  <input class="lecture-review-comment-input" type="text" placeholder="댓글을 입력하세요" #input/>
+  <button class="lecture-review-comment-btn" (click)="registerReview(input)" klueBtn>등록</button>
+
+  <div class="lecture-review-close" (click)="closeReview()">∧ 접기</div>
+</div>

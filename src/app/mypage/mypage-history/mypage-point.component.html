@@ -1,0 +1,24 @@
+<div class="mypage-point-wrap">
+  <div class="mypage-point-title"><img src="/assets/img/Bookmark.png" align="center">포인트 획득 및 사용 내역</div>
+  <div class="mypage-point-container">
+    <table>
+      <tr>
+        <th width="130px">일시</th>
+        <th width="330px">내용</th>
+        <th width="140px">포인트</th>
+        <th width="140px">잔여 포인트</th>
+      </tr>
+      <tr *ngFor="let item of pointList">
+        <td>{{item.created_at}}</td>
+        <td>{{item.reason}}</td>
+        <td [style.color]="item.points<0 ? '#fd884d' : '#ffbd85'"><span *ngIf="item.points>0">+</span>{{item.points}} P</td>
+        <td>{{item.remain_points}} P</td>
+      </tr>
+    </table>
+    <div class="mypage-point-btn-container">
+      <button class="mypage-point-page-move-btn" *ngIf="currentPage > 5" (click)="setPageList(false)"><</button>
+      <button class="mypage-point-page-btn" *ngFor="let num of pageList; let i=index" [class.selected]="currentPage == num" (click)="clickPage(num)" klueBtn>{{num}}</button>
+      <button class="mypage-point-page-move-btn" *ngIf="existNext" (click)="setPageList(true)">></button>
+    </div>
+  </div>
+</div>

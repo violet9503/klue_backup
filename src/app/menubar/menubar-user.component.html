@@ -1,0 +1,66 @@
+<li class="index-menubar-button mlr20">
+  <img src="/assets/img/Notification_new.png" *ngIf="isNewNotice" (click)="alert_click()"/>
+  <img src="/assets/img/Notification.png" *ngIf="!isNewNotice" (click)="alert_click()"/>
+  <!-- [sdc] Start of Scorll down component -->
+  <div class="index-menubar-scrolldown" [style.display]="isClick_alert ? 'block' : 'none'" style="z-index: 5;" (mouseleave)="tooltipFocus('alert', false)" (mouseenter)="tooltipFocus('alert', true)">
+    <img class="index-menubar-triangle">
+    <div class="index-menubar-inscroll tp">
+      <div class="index-inscroll-middle">알림</div>
+    </div>
+    <div class="index-menubar-inscroll" *ngFor="let alarm of alarmList">
+      <div class="index-inscroll-left"><img class="index-inscroll-profile" [src]="alarm.profile"/>
+      </div>
+      <div class="index-inscroll-right">
+        <span class="index-inscroll-title" [innerHTML]="alarm.content"></span>
+      </div>
+    </div>
+    <div class="index-menubar-inscroll lp">
+      <div class="index-inscroll-middle lp" (click)="routingService.routing('alarm')">전체보기</div>
+    </div>
+  </div>
+</li>
+<li class="index-menubar-button">
+  <img [src]="userService.userInfo.profile" id="index-menubar-personal" (click)="profile_click()"/>
+  <div class="index-menubar-personal-scrolldown" [style.display]="isClick_profile ? 'block' : 'none'" style="z-index: 5;" (mouseleave)="tooltipFocus('profile', false)" (mouseenter)="tooltipFocus('profile', true)">
+    <img class="index-menubar-personal-triangle">
+    <div class="index-menubar-personal-inscroll tp">
+      <div class="index-inscroll-personal-left tp">
+        <img class="index-inscroll-personal-profile" [src]="userService.userInfo.profile"/>
+      </div>
+      <div class="index-inscroll-personal-right tp">
+        <div class="index-inscroll-personal-title">{{userService.userInfo.name}}</div>
+        <div class="index-inscroll-personal-content">{{userService.userInfo.sc_id | schoolReplace}}</div>
+      </div>
+    </div>
+    <div class="index-menubar-personal-inscroll" (click)="routingService.routing('mypage')">
+      <div class="index-inscroll-personal-middle">
+        <img class="index-inscroll-personal-icon" src="/assets/img/Mypage_color.png"/>
+        <span class="index-inscroll-personal-iconmenu">마이페이지</span>
+      </div>
+    </div>
+    <div class="index-menubar-personal-inscroll" (click)="gotoTimetable()">
+      <div class="index-inscroll-personal-middle">
+        <img class="index-inscroll-personal-icon" src="/assets/img/Timetable_color.png"/>
+        <span class="index-inscroll-personal-iconmenu">나의 시간표</span>
+      </div>
+    </div>
+    <div class="index-menubar-personal-inscroll" (click)="routingService.routing('mypage', 'coffeebean')">
+      <div class="index-inscroll-personal-middle">
+        <img class="index-inscroll-personal-icon" src="/assets/img/Coffeebean_color.png"/>
+        <span class="index-inscroll-personal-iconmenu">나의 커피콩</span>
+      </div>
+    </div>
+    <div class="index-menubar-personal-inscroll" (click)="routingService.routing('mypage/history', 'eval')">
+      <div class="index-inscroll-personal-middle">
+        <img class="index-inscroll-personal-icon" src="/assets/img/History_color.png"/>
+        <span class="index-inscroll-personal-iconmenu">나의 활동</span>
+      </div>
+    </div>
+    <div class="index-menubar-personal-inscroll lp" (click)="logout()">
+      <div class="index-inscroll-personal-middle">
+        <img class="index-inscroll-personal-icon" src="/assets/img/Logout.png"/>
+        <span class="index-inscroll-personal-iconmenu lp">로그아웃</span>
+      </div>
+    </div>
+  </div>
+</li>

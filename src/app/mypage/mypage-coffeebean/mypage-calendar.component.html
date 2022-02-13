@@ -1,0 +1,39 @@
+<div class="mypage-select-container year">
+  <select class="mypage-calendar-select" (change)="changeDate(preDate, 'Year', $event.target.value)">
+    <option *ngFor="let i of year" value={{i}} [selected]="preDate.getFullYear()==i">{{i}}</option>
+  </select>
+</div>
+년
+<div class="mypage-select-container">
+  <select class="mypage-calendar-select" (change)="changeDate(preDate, 'Month', $event.target.value)">
+    <option *ngFor="let i of month" value={{i}} [selected]="preDate.getMonth()==(i-1)">{{i}}</option>
+  </select>
+</div>
+월
+<div class="mypage-select-container">
+  <select class="mypage-calendar-select" (change)="changeDate(preDate, 'Date', $event.target.value)">
+    <option *ngFor="let i of preDay" value={{i}} [selected]="preDate.getDate()==i">{{i}}</option>
+  </select>
+</div>
+일
+<img src="/assets/img/Calendar.png" class="mypage-coffeebean-calendar-img" align="center"> ~
+
+<div class="mypage-select-container year" (change)="changeDate(laterDate, 'Year', $event.target.value)">
+  <select class="mypage-calendar-select">
+    <option *ngFor="let i of year" value={{i}} [selected]="laterDate.getFullYear()==i">{{i}}</option>
+  </select>
+</div>
+년
+<div class="mypage-select-container">
+  <select class="mypage-calendar-select" (change)="changeDate(laterDate, 'Month', $event.target.value)">
+    <option *ngFor="let i of month" value={{i}} [selected]="laterDate.getMonth()==(i-1)">{{i}}</option>
+  </select>
+</div>
+월
+<div class="mypage-select-container">
+  <select class="mypage-calendar-select" (change)="changeDate(laterDate, 'Date', $event.target.value)">
+    <option *ngFor="let i of laterDay" value={{i}} [selected]="laterDate.getDate()==i">{{i}}</option>
+  </select>
+</div>
+일
+<img src="/assets/img/Calendar.png" class="mypage-coffeebean-calendar-img" align="center">

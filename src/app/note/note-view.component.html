@@ -1,0 +1,157 @@
+<sidemenu></sidemenu>
+<div class="note-view-wrap" *ngIf="noteContent">
+  <div class="note-view-container">
+    <div class="note-view-header">
+      <div class="note-view-type">{{noteContent.type}}</div>
+      <div class="note-view-title">{{noteContent.title}}</div>
+      <div class="note-view-info">
+        <div class="note-view-info-left">
+          <img [src]="noteContent.profile" align="center">
+          <span class="note-view-info-name">{{noteContent.user_name}}</span>
+          <span class="note-view-info-day">작성일 {{noteContent.created_at.split(' ')[0]}}</span>
+        </div>
+        <div class="note-view-info-right">
+          <div>
+            <img src="/assets/img/View_grey.png" align="center">
+            {{noteContent.hit}}
+          </div>
+          <div (click)="clickLike()">
+            <img src="/assets/img/Likes_empty_color.png" *ngIf="!noteContent.like_status" align="center"/>
+            <img src="/assets/img/Likes_fill_color.png" *ngIf="noteContent.like_status" align="center"/>
+            {{noteContent.like_count}}
+          </div>
+        </div>
+      </div>
+      <div class="note-view-header-download">
+        <div *ngIf="noteContent.is_free==0">
+          <div *ngIf="!noteContent.is_purchased">
+            <img src="/assets/img/Coffeebean_color.png" align="center"><span>커피콩 {{noteContent.price}}개</span>
+            <button class="note-view-download-btn" (click)="isOpen=true" klueBtn>커피콩으로 구매하기</button>
+          </div>
+          <div *ngIf="noteContent.is_purchased">
+            <span class="note-view-pay-complete">커피콩 지불 완료</span>
+            <button class="note-view-download-btn" klueBtn><img src="/assets/img/Download_color.png" align="center">다운로드</button>
+          </div>
+        </div>
+        <div *ngIf="noteContent.is_free==1">
+          <div *ngIf="!noteContent.is_purchased">
+            <img src="/assets/img/Points_color.png" align="center"><span>포인트 {{noteContent.price_points}} P</span>
+            <button class="note-view-download-btn" (click)="isOpen=true" klueBtn>포인트로 구매하기</button>
+          </div>
+          <div *ngIf="noteContent.is_purchased">
+            <span class="note-view-pay-complete">포인트 지불 완료</span>
+            <button class="note-view-download-btn" klueBtn><img src="/assets/img/Download_color.png" align="center">다운로드</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="note-view-content">
+      <div class="note-view-content-title">
+        <hr><span class="note-view-content-name">공부노트 미리보기</span>
+      </div>
+      <div class="note-view-content-page">
+        <img src="/assets/img/StudyNote_color.png" align="center"><span>총 {{noteContent.page}}p</span>
+      </div>
+      <div id="index-carousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#index-carousel" *ngFor="let item of carouselImg; let i = index;" data-slide-to="i" [class.active]="i == 0"></li>
+        </ol>
+
+        <div class="carousel-inner" role="listbox" #carouselList>
+          <div class="item" *ngFor="let preview of notePreview; let i = index;" [class.active]="i == 0">
+            <img [src]="preview">
+          </div>
+        </div>
+
+        <a class="left carousel-control" href="#index-carousel" role="button" data-slide="prev">
+          <img src="/assets/img/Arrow_left.png">
+        </a>
+        <a class="right carousel-control" href="#index-carousel" role="button" data-slide="next">
+          <img src="/assets/img/Arrow_right.png">
+        </a>
+      </div>
+
+      <div class="note-view-content-title">
+        <hr><span class="note-view-content-name">관련 강의</span>
+      </div>
+      <div class="note-view-content-hash" *ngIf="noteContent.lec_id">
+        {{noteContent.lec_sc_id | schoolReplace}} | {{noteContent.lec_name | lectureSlice:25}} | {{noteContent.lec_prof | lectureSlice:10}} | {{noteContent.lec_code}} | {{noteContent.lec_year}}-{{noteContent.lec_term}}
+      </div>
+
+      <div class="note-view-content-title">
+        <hr><span class="note-view-content-name">공부노트 설명</span>
+      </div>
+      <div class="note-view-content-description">
+        {{noteContent.content}}
+      </div>
+      <div class="note-view-content-hash" *ngIf="noteContent.hash_tag">#알고리즘 #컴퓨터학과 #중간고사</div>
+    </div>
+    <div class="note-view-download">
+
+      <div *ngIf="noteContent.is_free==0">
+        <div *ngIf="!noteContent.is_purchased">
+          <span><img src="/assets/img/Coffeebean_color.png" align="center">커피콩 {{noteContent.price}}개</span>
+          <button class="note-view-download-btn" (click)="isOpen=true" klueBtn>커피콩으로 구매하기</button>
+        </div>
+        <div *ngIf="noteContent.is_purchased">
+          <span class="note-view-pay-complete">커피콩 지불 완료</span>
+          <button class="note-view-download-btn" klueBtn><img src="/assets/img/Download_color.png" align="center">다운로드</button>
+        </div>
+      </div>
+      <div *ngIf="noteContent.is_free==1">
+        <div *ngIf="!noteContent.is_purchased">
+          <span><img src="/assets/img/Points_color.png" align="center">포인트 {{noteContent.price_points}} P</span>
+          <button class="note-view-download-btn" (click)="isOpen=true" klueBtn>포인트로 구매하기</button>
+        </div>
+        <div *ngIf="noteContent.is_purchased">
+          <span class="note-view-pay-complete">포인트 지불 완료</span>
+          <button class="note-view-download-btn" klueBtn><img src="/assets/img/Download_color.png" align="center">다운로드</button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="note-view-reaction">
+        <div class="note-view-reaction-left">
+          <div (click)="clickLike()">
+            <img src="/assets/img/Likes_empty_color.png" *ngIf="!noteContent.like_status" align="center"/>
+            <img src="/assets/img/Likes_fill_color.png" *ngIf="noteContent.like_status" align="center"/>
+            {{noteContent.like_count}}
+          </div>
+          <div (click)="reviewStatus = !reviewStatus"><img src="/assets/img/Comment_grey.png" align="center" style="margin-left:20px;"/> {{noteContent.comments_count}}</div>
+        </div>
+        <div class="note-view-reaction-right" *ngIf="!noteContent.write_status">
+          <img src="/assets/img/Report.png" align="center"/>
+          <span>신고</span>
+        </div>
+
+        <div class="note-view-reaction-right" *ngIf="noteContent.write_status">
+          <img src="/assets/img/Delete_color.png" align="center"/>
+          <span (click)="clickDelete(noteContent.id)">삭제</span>
+        </div>
+      </div>
+      <note-review *ngIf="reviewStatus" (close)="reviewStatus = false" (changeComments)="changeComments($event)" [noteId]="id"></note-review>
+    </div>
+  </div>
+</div>
+<div class="klue-logo"><img src="/assets/img/KLUE_Logo_grey.png"/></div>
+
+<div *ngIf="isOpen">
+  <div class="modal-wrap" (click)="modalOut()">
+    <div class="modal-row">
+      <div class="modal-content" (mouseleave)="isOut=true" (mouseenter)="isOut=false">
+        <div class="modal-content-header"><img src="/assets/img/KLUE_Logo_color.png"></div>
+        <div class="modal-content-title">노트 구매시 유의사항</div>
+        <div class="modal-content-caution">
+          <span>- 유의사항 유의사항 유의사항 유의사항 유의사항 유의사항 유의사항 유의사항1</span>
+          <span>- 유의사항 유의사항 유의사항 유의사항 유의사항 유의사항 유의사항 유의사항2</span>
+          <span>- 유의사항 유의사항 유의사항 유의사항 유의사항 유의사항 유의사항 유의사항3</span>
+          <span>- 유의사항 유의사항 유의사항 유의사항 유의사항 유의사항 유의사항 유의사항4</span>
+        </div>
+        <div>
+          <button class="modal-btn" klueBtn (click)="notePurchase()">동의하고 구매하기</button>
+          <button class="modal-btn" klueBtn (click)="isOpen=false">돌아가기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

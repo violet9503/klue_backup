@@ -1,0 +1,84 @@
+@media all and (max-width: 1279px) {
+  .mypage-point-wrap{
+    position: relative;
+    left:100px;
+  }
+}
+
+.mypage-point-wrap{
+  width: 800px;
+  margin: 50px auto;
+}
+
+.mypage-point-title{
+  font-size: 24px;
+  color: #4a4a4a;
+  margin: 50px 0 24px 5px;
+}
+
+.mypage-point-title > img{
+  width:30px;
+  height:30px;
+  margin-right:5px;
+}
+
+.mypage-point-container{
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 0 30px;
+}
+
+table{
+  font-size: 14px;
+  text-align: center;
+  color: #4a4a4a;
+  border-bottom: 1px solid #e5e5e5;
+  border-spacing:0;
+}
+
+th{
+  border-bottom:1px solid #e5e5e5;
+  color: #bbbbbb;
+}
+
+tr{
+  width:100%;
+  height:80px;
+}
+
+td:nth-child(4n+1){
+  color: #9b9b9b;
+}
+
+.mypage-point-btn-container{
+  padding: 25px 0;
+  text-align: center;
+}
+
+.mypage-point-page-btn{
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  border: solid 1px #fd884d;
+  background-color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  color: #fd884d;
+  margin:0 5px;
+}
+
+.mypage-point-page-btn.selected{
+  width: 30px;
+  height: 30px;
+  background-color: #fd884d;
+  color:#ffffff;
+  margin:0 10px;
+}
+
+.mypage-point-page-move-btn{
+  color:#fd884d;
+  font-size:8px;
+  cursor: pointer;
+  border:0;
+  background: 0;
+}

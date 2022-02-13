@@ -1,0 +1,13 @@
+.modal-content-header{
+    margin:0 auto;
+    width:150px;
+    height:40px;
+    font-size: 40px;
+    color:#ff884d;
+    text-align: center;
+}
+
+.modal-content-header>img{
+  width:120px;
+  height:40px;
+}

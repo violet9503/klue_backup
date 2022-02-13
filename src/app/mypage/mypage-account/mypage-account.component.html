@@ -1,0 +1,41 @@
+<div class="mypage-account-container">
+  <div class="mypage-account-contents-title"><img src="/assets/img/Bookmark.png" align="center">학교 인증</div>
+  <div class="mypage-account-contents-container">
+    <div class="mypage-account-contents-line">
+      <div class="mypage-account-contents-name">학교 이메일</div>
+      <span>{{mypageService.userInfo.sc_email}}{{mypageService.userInfo.sc_id | schoolReplace: true}}</span>
+      <button class="mypage-account-contents-btn" disabled>인증 완료</button>
+    </div>
+  </div>
+
+  <div class="mypage-account-contents-title"><img src="/assets/img/Bookmark.png" align="center">연락처</div>
+  <div class="mypage-account-contents-container">
+    <div class="mypage-account-contents-line">
+      <div class="mypage-account-contents-name">휴대전화</div>
+      <span>등록된 번호 없음</span>
+      <button class="mypage-account-contents-btn" disabled>준비 중!</button>
+    </div>
+  </div>
+
+  <div class="mypage-account-contents-title"><img src="/assets/img/Bookmark.png" align="center">계정</div>
+  <div class="mypage-account-contents-container">
+    <div class="mypage-account-contents-line">
+      <div class="mypage-account-contents-name">아이디</div>
+      <span>{{mypageService.userInfo.id}}</span>
+    </div>
+    <div class="mypage-account-contents-line">
+      <div class="mypage-account-contents-name">SNS연동</div>
+      <span [style.color]="mypageService.userInfo.google ? '' : '#bbbbbb'">구글</span>
+      <button class="mypage-account-contents-btn google" (click)="goGoogle()" *ngIf="!mypageService.userInfo.google">연동하기</button>
+      <button class="mypage-account-contents-btn logged-google" *ngIf="mypageService.userInfo.google">{{mypageService.userInfo.google.name}}</button>
+    </div>
+    <div class="mypage-account-contents-line">
+      <div class="mypage-account-contents-name"></div>
+      <span [style.color]="mypageService.userInfo.facebook ? '' : '#bbbbbb'">페이스북</span>
+      <button class="mypage-account-contents-btn facebook" (click)="goFacebook()" *ngIf="!mypageService.userInfo.facebook">연동하기</button>
+      <button class="mypage-account-contents-btn logged-facebook" *ngIf="mypageService.userInfo.facebook">{{mypageService.userInfo.facebook.name}}</button>
+    </div>
+    <hr>
+    <span class="mypage-account-contents-name">계정 삭제</span>
+  </div>
+</div>
